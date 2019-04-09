@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {AppRouterUrls} from '../../../app-routing.config';
+import { AppRouterUrls } from '../../../app-routing.config';
 
 @Component({
   selector: 'app-navigation-menu',

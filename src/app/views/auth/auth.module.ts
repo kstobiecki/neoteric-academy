@@ -8,8 +8,7 @@ import { AuthServices } from './services';
 // in this module we import every angular material module
 @NgModule({
   imports: [
-    MaterialModule,
-    SharedModule
+    MaterialModule
   ],
   declarations: [
     ...AuthComponents

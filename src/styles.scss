@@ -2,3 +2,71 @@
 
 @import 'styles/_overrides';
 @import 'styles/_variables';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.label-log {
+  display: block;
+  font-size: 10px;
+  font-weight: 900;
+  margin-bottom: 5px;
+  margin-top: 20px;
+  margin-left: 20px;
+  text-transform: uppercase;
+}
+
+.button-log {
+  background-color: #ff4081;
+  border: 0;
+  border-radius: 20px;
+  text-transform: uppercase;
+  color: white;
+  width: 90%;
+  height: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.form-log {
+  margin-top: 40px;
+  margin-left: 165px;
+  width: 60%;
+  background-color: white;
+  border-style: outset;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.p-log {
+  color: red;
+  font-size: 10px;
+  margin-top: 5px;
+}
+
+.input-form {
+  width: 90%;
+  height: 40px;
+  padding: 5px 8px;
+  margin: 4px 0;
+  border-radius: 10px;
+  border-style: groove;
+  border-color: black;
+  background-color: white;
+}
+.input-form:focus {
+  border-style: solid;
+  border-width: medium;
+  border-color: green;
+  background-color: gainsboro;
+}
+
+.centered {
+  width: 900px;
+  height: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+

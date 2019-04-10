@@ -1,24 +1,30 @@
 import { Component, DoCheck, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { AuthService } from '../../services';
+
 
 @Component({
-  selector: 'app-auth-login',
-  templateUrl: './auth-login.component.html',
-  styleUrls: ['./auth-login.component.scss'],
+  selector: 'app-auth-signup',
+  templateUrl: './auth-signup.component.html',
+  styleUrls: ['./auth-signup.component.scss']
 })
-export class AuthLoginComponent implements OnInit, DoCheck {
+export class AuthSignupComponent implements OnInit, DoCheck {
   username: string = '';
   password: string = '';
   emptyEmail: boolean;
   emptyPassword: boolean;
 
-  constructor(private router: Router,
-              private route: ActivatedRoute) {}
+  constructor(private authService: AuthService,
+              private router: Router,
+              private route: ActivatedRoute) {
+  }
+
   ngOnInit() {
   }
+
   ngDoCheck() {
     this.route.params.subscribe(
-      (params: Params) => {
+      (params: Params) => {      // później params się przyda
         if (this.username === '') {
           this.emptyEmail = true;
         } else {
@@ -33,15 +39,8 @@ export class AuthLoginComponent implements OnInit, DoCheck {
     );
   }
 
-  onLogin() {
-    if (this.username === 'admin@gmail.com' && this.password === 'admin') {
-      alert('You are logged as ' + this.username);
-      this.router.navigate(['']);
-    } else if (this.username === '' || this.password === '') {
-      alert('Enter email and password');
-    } else {
-      alert('Wrong login or password');
-    }
+  onSignup() {
+    this.router.navigate(['../login'], {relativeTo: this.route});
   }
   getEmailColor() {
     return this.emptyEmail === true ? 'red' : '';

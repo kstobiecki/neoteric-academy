@@ -3,15 +3,17 @@ import { AuthComponents } from './components';
 import { SharedModule } from '../../shared/shared.module';
 import { MaterialModule } from '../../material/material.module';
 import { AuthServices } from './services';
+import {FormsModule} from "@angular/forms";
 
 
 // in this module we import every angular material module
 @NgModule({
   imports: [
-    MaterialModule
+    MaterialModule,
+    FormsModule
   ],
   declarations: [
-    ...AuthComponents
+    ...AuthComponents,
   ],
   providers: [
     ...AuthServices

@@ -4,6 +4,7 @@
 @import 'styles/_variables';
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+
 .label-log {
   display: block;
   font-size: 10px;
@@ -14,16 +15,20 @@
   text-transform: uppercase;
 }
 
-.button-log {
+.btn-log {
   background-color: #ff4081;
   border: 0;
-  border-radius: 20px;
   text-transform: uppercase;
   color: white;
   width: 90%;
   height: 40px;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.btn-rounded {
+  padding: 0 20px;
+  border-radius: 20px;
 }
 
 .form-log {
@@ -63,10 +68,19 @@
   width: 900px;
   height: 80%;
   position: absolute;
+  margin-top: 100px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
 }
 
 

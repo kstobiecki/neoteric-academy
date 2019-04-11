@@ -1,3 +1,31 @@
-<a [routerLink]="appRouterUrls.LOGIN">login</a>
-<br>
-<a [routerLink]="appRouterUrls.SIGNUP">signup</a>
+<nav>
+    <div>
+      <ul>
+        <li class="right"><a mat-flat-button [routerLink]="appRouterUrls.SIGNUP">signup</a></li>
+        <li class="right"><a mat-flat-button [routerLink]="appRouterUrls.LOGIN">login</a></li>
+        <li class="right"><button class="btn-nav btn-rounded"
+                                  [routerLink]="appRouterUrls.LOGIN">Post a Job</button></li>
+        <li class="right"><a mat-flat-button>Contact</a></li>
+        <li class="right"><a mat-flat-button>About us</a></li>
+        <li class="right"><a mat-flat-button>Event</a></li>
+        <li class="right"><a mat-flat-button>Magazine</a></li>
+        <li class="left"><header class="active">justjoin.it</header></li>
+        <li class="left"><header>justbrands.it</header></li>
+        <li class="left"><header>The biggest...</header></li>
+      </ul>
+    </div>
+</nav>
+
+<!--      <div class="right">-->
+<!--        <mat-sidenav-container class="example-container">-->
+<!--          <mat-sidenav #sidenav mode="side" [(opened)]="opened">-->
+<!--            Sidenav content-->
+<!--          </mat-sidenav>-->
+
+<!--          <mat-card-content>-->
+<!--            <a mat-flat-button (click)="sidenavOpen()">test1</a>-->
+<!--          </mat-card-content>-->
+<!--        </mat-sidenav-container>-->
+<!--      </div>-->
+
+

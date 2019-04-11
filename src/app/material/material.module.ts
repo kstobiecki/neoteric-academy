@@ -7,7 +7,7 @@ import {
   MatSidenavModule,
   MatCheckboxModule,
   MatIconModule,
-  MatMenuModule
+  MatMenuModule,
 } from '@angular/material';
 
 

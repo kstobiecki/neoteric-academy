@@ -7,14 +7,7 @@ import { AppRouterUrls } from '../../../app-routing.config';
   styleUrls: ['./navigation-menu.component.scss'],
 })
 export class NavigationMenuComponent {
-  // opened: boolean = false;
-
   appRouterUrls = AppRouterUrls;
 
   constructor() {}
-
-  // sidenavOpen() {
-  //   this.opened = !this.opened;
-  //   console.log(this.opened);
-  // }
 }

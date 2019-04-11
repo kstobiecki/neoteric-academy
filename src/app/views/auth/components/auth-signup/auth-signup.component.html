@@ -1,21 +1,34 @@
 <div class="row">
   <div class="centered">
     <form class="form-log">
-      <div class="form-group">
+      <div>
         <label for="email" class="label-log">email address</label>
         <input type="email" id="email" name="email" class="input-form" placeholder="Your email..."
                [(ngModel)]="username"
                [ngStyle]="{borderColor: getEmailColor()}">
         <p class="p-log" *ngIf="emptyEmail">Email address is required</p>
       </div>
-      <div class="form-group">
+      <div>
         <label for="password" class="label-log">password</label>
         <input type="password" id="password" name="password" class="input-form" placeholder="Your password..."
                [(ngModel)]="password"
                [ngStyle]="{borderColor: getPasswordColor()}">
         <p class="p-log" *ngIf="emptyPassword">Password is required</p>
       </div>
-      <button class="btn-log btn-rounded" type="submit" (click)="onLogin()">Log In</button>
+      <div>
+        <label for="country" class="label-log">your location</label>
+        <select id="country" name="country" class="input-form">
+          <option value="poland">Poland</option>
+          <option value="greatBritain">Great Britain</option>
+          <option value="germany">Germany</option>
+          <option value="usa">USA</option>
+          <option value="russia">Russia</option>
+        </select>
+      </div>
+      <div class="label-log">
+        <mat-checkbox>I agree to the terms of service and privacy policy</mat-checkbox>
+      </div>
+      <button class="btn-log btn-rounded" type="submit" (click)="onSignup()">Sing Up</button>
     </form>
   </div>
 </div>

@@ -7,7 +7,6 @@ import { AppRouterUrls } from '../../../app-routing.config';
   styleUrls: ['./navigation-menu.component.scss'],
 })
 export class NavigationMenuComponent {
-
   appRouterUrls = AppRouterUrls;
 
   constructor() {}

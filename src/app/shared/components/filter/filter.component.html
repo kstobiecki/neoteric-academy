@@ -1,0 +1,36 @@
+<nav>
+  <div>
+    <ul>
+      <mat-button-toggle-group>
+        <mat-button-toggle>All</mat-button-toggle>
+<!--        *ngFor="city of cities">{{city.name}}-->
+        <mat-button-toggle>Warszawa</mat-button-toggle>
+        <mat-button-toggle>Kraków</mat-button-toggle>
+        <mat-button-toggle>Wrocław</mat-button-toggle>
+        <mat-button-toggle>Poznań</mat-button-toggle>
+        <mat-button-toggle>Trójmiasto</mat-button-toggle>
+        <mat-button-toggle>Remote</mat-button-toggle>
+        <mat-button-toggle>World</mat-button-toggle>
+        <mat-button-toggle [matMenuTriggerFor]="menu">
+          <mat-icon>arrow_drop_down</mat-icon>
+        </mat-button-toggle>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>Białystok</button>
+          <button mat-menu-item>Bielsko-Biała</button>
+          <button mat-menu-item>Bydgoszcz</button>
+          <button mat-menu-item>Częstochowa</button>
+          <button mat-menu-item>Gliwice</button>
+          <button mat-menu-item>Katowice</button>
+          <button mat-menu-item>Kielce</button>
+          <button mat-menu-item>Lublin</button>
+          <button mat-menu-item>Łódź</button>
+          <button mat-menu-item>Olsztyn</button>
+          <button mat-menu-item>Opole</button>
+          <button mat-menu-item>Toruń</button>
+          <button mat-menu-item>Rzeszów</button>
+          <button mat-menu-item>Szczecin</button>
+        </mat-menu>
+      </mat-button-toggle-group>
+    </ul>
+  </div>
+</nav>

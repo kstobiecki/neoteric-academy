@@ -1,3 +1,7 @@
+nav {
+  height: 100%;
+}
+
 ul {
   list-style-type: none;
   margin-top: 20px;
@@ -31,13 +35,16 @@ li header {
   padding: 14px 16px;
   text-decoration: none;
   background-color: #f3f6f8;
+  border: hidden;
   border-radius: 10px 10px 0px 0px;
+  align-self: flex-end;
 }
 
 li header:active {
   background-color: #f3f6f8;
   box-shadow: 0 -3px 6px 0;
   align-self: end;
+  border: outset;
 }
 
 

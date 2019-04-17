@@ -1,40 +1,38 @@
-import { Component, DoCheck, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-auth-login',
   templateUrl: './auth-login.component.html',
   styleUrls: ['./auth-login.component.scss'],
 })
-export class AuthLoginComponent implements OnInit, DoCheck {
+export class AuthLoginComponent implements OnInit {
   username: string = '';
   password: string = '';
-  emptyEmail: boolean;
-  emptyPassword: boolean;
+  passwordPattern = '[a-z].*[0-9]|[0-9].*[a-z]';
+  emailPattern = '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$';
+
+  angForm: FormGroup;
 
   constructor(private router: Router,
-              private route: ActivatedRoute) {}
-  ngOnInit() {
-  }
-  ngDoCheck() {
-    this.route.params.subscribe(
-      (params: Params) => {
-        if (this.username === '') {
-          this.emptyEmail = true;
-        } else {
-          this.emptyEmail = false;
-        }
-        if (this.password === '') {
-          this.emptyPassword = true;
-        } else {
-          this.emptyPassword = false;
-        }
+              private route: ActivatedRoute,
+              private formBuilder: FormBuilder) {
+    this.createForm();
+    }
+
+  createForm() {
+    this.angForm = this.formBuilder.group({
+        email: ['', Validators.required ],
+        password: ['', Validators.required ]
       }
     );
   }
+  ngOnInit() {
+  }
 
   onLogin() {
-    if (this.username === 'admin@gmail.com' && this.password === 'admin') {
+    if (this.username === 'admin@gmail.com' && this.password === 'adminadmin1234') {
       alert('You are logged as ' + this.username);
       this.router.navigate(['']);
     } else if (this.username === '' || this.password === '') {
@@ -42,11 +40,5 @@ export class AuthLoginComponent implements OnInit, DoCheck {
     } else {
       alert('Wrong login or password');
     }
-  }
-  getEmailColor() {
-    return this.emptyEmail === true ? 'red' : '';
-  }
-  getPasswordColor() {
-    return this.emptyPassword === true ? 'red' : '';
   }
 }

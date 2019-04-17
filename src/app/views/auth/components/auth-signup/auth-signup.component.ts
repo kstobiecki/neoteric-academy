@@ -1,5 +1,6 @@
-import { Component, DoCheck, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../../services';
 
 
@@ -8,44 +9,35 @@ import { AuthService } from '../../services';
   templateUrl: './auth-signup.component.html',
   styleUrls: ['./auth-signup.component.scss']
 })
-export class AuthSignupComponent implements OnInit, DoCheck {
+export class AuthSignupComponent implements OnInit {
   username: string = '';
   password: string = '';
-  emptyEmail: boolean;
-  emptyPassword: boolean;
+  passwordPattern = '[a-z].*[0-9]|[0-9].*[a-z]';
+  emailPattern = '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$';
+
+  countries = ['Poland', 'Great Britain', 'Germany', 'USA', 'Russia'];
+
+  angForm: FormGroup;
 
   constructor(private authService: AuthService,
               private router: Router,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+              private formBuilder: FormBuilder) {
+    this.createForm();
   }
-
-  ngOnInit() {
-  }
-
-  ngDoCheck() {
-    this.route.params.subscribe(
-      (params: Params) => {      // później params się przyda
-        if (this.username === '') {
-          this.emptyEmail = true;
-        } else {
-          this.emptyEmail = false;
-        }
-        if (this.password === '') {
-          this.emptyPassword = true;
-        } else {
-          this.emptyPassword = false;
-        }
+  createForm() {
+    this.angForm = this.formBuilder.group({
+      email: ['', Validators.required ],
+      password: ['', Validators.required ]
       }
     );
   }
 
+  ngOnInit() {
+
+  }
+
   onSignup() {
     this.router.navigate(['../login'], {relativeTo: this.route});
-  }
-  getEmailColor() {
-    return this.emptyEmail === true ? 'red' : '';
-  }
-  getPasswordColor() {
-    return this.emptyPassword === true ? 'red' : '';
   }
 }

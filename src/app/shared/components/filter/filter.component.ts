@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./filter.component.scss']
 })
 export class FilterComponent implements OnInit {
-   cities = [
+   citiesMain = [
      {name: 'All'},
      {name: 'Warszawa'},
      {name: 'Kraków'},
@@ -14,7 +14,8 @@ export class FilterComponent implements OnInit {
      {name: 'Poznań'},
      {name: 'Trójmiasto'},
      {name: 'Remote'},
-     {name: 'World'},
+     {name: 'World'}];
+     citiesDrop = [
      {name: 'Białystok'},
      {name: 'Bielsko-Biała'},
      {name: 'Bydgoszcz'},

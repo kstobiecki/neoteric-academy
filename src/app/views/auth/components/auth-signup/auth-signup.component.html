@@ -1,34 +1,63 @@
 <div class="row">
   <div class="centered">
-    <form class="form-log">
+    <form class="form-log"
+          [formGroup]="angForm" novalidate>
+
       <div>
         <label for="email" class="label-log">email address</label>
-        <input type="email" id="email" name="email" class="input-form" placeholder="Your email..."
-               [(ngModel)]="username"
-               [ngStyle]="{borderColor: getEmailColor()}">
-        <p class="p-log" *ngIf="emptyEmail">Email address is required</p>
+        <input id="email" type="email" id="email" name="email" class="input-form" placeholder="Your email..."
+               formControlName="email"
+               [pattern]="emailPattern"
+               [(ngModel)]="username">
       </div>
+      <div *ngIf="angForm.controls['email'].invalid &&
+                (angForm.controls['email'].dirty || angForm.controls['email'].touched)" class="validation">
+        <mat-error *ngIf="angForm.controls['email'].errors.required">
+          Email address is required.
+        </mat-error>
+        <mat-error *ngIf="angForm.controls['email'].errors.pattern">
+          Enter valid email address
+        </mat-error>
+      </div>
+
       <div>
         <label for="password" class="label-log">password</label>
-        <input type="password" id="password" name="password" class="input-form" placeholder="Your password..."
-               [(ngModel)]="password"
-               [ngStyle]="{borderColor: getPasswordColor()}">
-        <p class="p-log" *ngIf="emptyPassword">Password is required</p>
-      </div>
+        <input id="password" type="password" id="password" name="password" class="input-form" placeholder="Your password..."
+               formControlName="password"
+               required minlength="6"
+               [pattern]="passwordPattern"
+               [(ngModel)]="password">
       <div>
+        <div *ngIf="angForm.controls['password'].invalid &&
+                   (angForm.controls['password'].dirty || angForm.controls['password'].touched)" class="validation">
+          <mat-error *ngIf="angForm.controls['password'].errors.required">
+            Password is required.
+          </mat-error>
+          <mat-error *ngIf="angForm.controls['password'].errors.minlength">
+            Password must be at least 6 characters long.
+          </mat-error>
+          <mat-error *ngIf="angForm.controls['password'].errors.pattern">
+            Password must contain at least one letter and one number.
+          </mat-error>
+        </div>
+
         <label for="country" class="label-log">your location</label>
         <select id="country" name="country" class="input-form">
-          <option value="poland">Poland</option>
-          <option value="greatBritain">Great Britain</option>
-          <option value="germany">Germany</option>
-          <option value="usa">USA</option>
-          <option value="russia">Russia</option>
+          <option *ngFor="let country of countries" [value]="country">{{country}}</option>
         </select>
       </div>
+
       <div class="label-log">
         <mat-checkbox>I agree to the terms of service and privacy policy</mat-checkbox>
       </div>
-      <button class="btn-log btn-rounded" type="submit" (click)="onSignup()">Sing Up</button>
+
+        <button class="btn-log btn-rounded" type="submit" (click)="onSignup()"
+                *ngIf="!(angForm.controls['password'].invalid &&
+                    (angForm.controls['password'].dirty || angForm.controls['password'].touched)) &&
+                    !(angForm.controls['email'].invalid &&
+                    (angForm.controls['email'].dirty || angForm.controls['email'].touched))"
+        >Sing Up</button>
+      </div>
     </form>
   </div>
 </div>

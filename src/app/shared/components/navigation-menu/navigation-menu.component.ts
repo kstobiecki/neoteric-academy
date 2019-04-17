@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { AppRouterUrls } from '../../../app-routing.config';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-navigation-menu',
@@ -9,5 +10,6 @@ import { AppRouterUrls } from '../../../app-routing.config';
 export class NavigationMenuComponent {
   appRouterUrls = AppRouterUrls;
 
-  constructor() {}
-}
+  constructor() {
+    }
+  }

@@ -1,10 +1,24 @@
 
-  <app-navigation-menu></app-navigation-menu>
-  <app-filter></app-filter>
-  <hr>
+<!--  <app-navigation-menu></app-navigation-menu>-->
+<!--  <app-filter></app-filter>-->
+<!--  <hr>-->
 
-    <router-outlet></router-outlet>
+<!--    <router-outlet></router-outlet>-->
 
 <!--<app-sidenav></app-sidenav>-->
 
 
+<div class="container">
+  <div class="nav-menu">
+    <app-navigation-menu></app-navigation-menu>
+  </div>
+  <div class="filters">
+    <app-filter></app-filter>
+  </div>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="sidenav">
+
+  </div>
+</div>

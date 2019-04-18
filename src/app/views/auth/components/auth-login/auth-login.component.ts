@@ -10,6 +10,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 export class AuthLoginComponent implements OnInit {
   username: string = '';
   password: string = '';
+  buttonCanDisplay;
   passwordPattern = '[a-z].*[0-9]|[0-9].*[a-z]';
   emailPattern = '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$';
 
@@ -29,6 +30,8 @@ export class AuthLoginComponent implements OnInit {
     );
   }
   ngOnInit() {
+    this.buttonCanDisplay = false;
+
   }
 
   onLogin() {

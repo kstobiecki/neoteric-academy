@@ -1,17 +1,28 @@
 <nav>
   <div>
     <ul>
-      <mat-button-toggle-group>
-        <mat-button-toggle>All</mat-button-toggle>
-        <mat-button-toggle *ngFor="let cm of citiesMain">{{ cm.name }}</mat-button-toggle>
-        <mat-button-toggle [matMenuTriggerFor]="menu">
-          <mat-icon>arrow_drop_down</mat-icon>
-        </mat-button-toggle>
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item
-          *ngFor="let cd of citiesDrop">{{ cd.name }}</button>
-        </mat-menu>
-      </mat-button-toggle-group>
+<!--      <mat-button-toggle-group>-->
+<!--        <mat-button-toggle *ngFor="let cm of citiesMain">{{ cm.name }}</mat-button-toggle>-->
+<!--        <mat-button-toggle [matMenuTriggerFor]="menu">-->
+<!--          <mat-icon>arrow_drop_down</mat-icon>-->
+<!--        </mat-button-toggle>-->
+<!--        <mat-menu #menu="matMenu">-->
+<!--          <button mat-menu-item-->
+<!--          *ngFor="let cd of citiesDrop">{{ cd.name }}</button>-->
+<!--        </mat-menu>-->
+<!--      </mat-button-toggle-group>-->
+      <div class="location">
+        <mat-chip-list>
+          <mat-chip *ngFor="let cm of citiesMain">{{ cm.name }}</mat-chip>
+          <mat-chip [matMenuTriggerFor]="menu">
+            <mat-icon>arrow_drop_down</mat-icon>
+          </mat-chip>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item
+                    *ngFor="let cd of citiesDrop">{{ cd.name }}</button>
+          </mat-menu>
+        </mat-chip-list>
+      </div>
     </ul>
   </div>
 </nav>

@@ -7,6 +7,7 @@
         <label for="email" class="label-log">email address</label>
         <input id="email" type="email" id="email" name="email" class="input-form" placeholder="Your email..."
                formControlName="email"
+               required minlength="1"
                [pattern]="emailPattern"
                [(ngModel)]="username">
       </div>
@@ -14,6 +15,8 @@
                 (angForm.controls['email'].dirty || angForm.controls['email'].touched)" class="validation">
         <mat-error *ngIf="angForm.controls['email'].errors.required">
           Email address is required.
+        </mat-error>
+        <mat-error *ngIf="angForm.controls['email'].errors.minlength">
         </mat-error>
         <mat-error *ngIf="angForm.controls['email'].errors.pattern">
           Enter valid email address
@@ -52,10 +55,10 @@
       </div>
 
         <button class="btn-log btn-rounded" type="submit" (click)="onSignup()"
-                *ngIf="!(angForm.controls['password'].invalid &&
+                *ngIf="(!(angForm.controls['password'].invalid &&
                     (angForm.controls['password'].dirty || angForm.controls['password'].touched)) &&
                     !(angForm.controls['email'].invalid &&
-                    (angForm.controls['email'].dirty || angForm.controls['email'].touched))"
+                    (angForm.controls['email'].dirty || angForm.controls['email'].touched))) && (username && password)"
         >Sing Up</button>
       </div>
     </form>

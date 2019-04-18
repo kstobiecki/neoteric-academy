@@ -1,14 +1,22 @@
-.mat-button-toggle-group {
+.mat-chip-list {
   border: 0;
-  margin-left: -50px;
 }
 
-.mat-button-toggle {
+.location {
+  margin: -30px;
+}
+
+.mat-chip {
   border-radius: 20px;
   margin: 0 10px 0 10px;
+  background: white;
+  font-size: 16px;
 }
 
-.mat-button-toggle-checked {
+.mat-chip:after {
  background: linear-gradient(to right, #ba68c8, #9c27b0);
 }
 
+ul {
+  margin-left: 10px;
+}

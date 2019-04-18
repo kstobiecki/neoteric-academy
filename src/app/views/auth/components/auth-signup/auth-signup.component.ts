@@ -34,7 +34,6 @@ export class AuthSignupComponent implements OnInit {
   }
 
   ngOnInit() {
-
   }
 
   onSignup() {

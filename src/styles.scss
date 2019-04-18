@@ -4,6 +4,49 @@
 @import 'styles/_variables';
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+body {
+  margin: 0;
+}
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.main-content {
+  display: grid;
+  height: 100%;
+}
+
+.nav-menu {
+  width: 100%;
+  height: 80px;
+}
+
+.sidenav {
+  position: relative;
+  top: -170px;
+  width: 300px;
+  height: 100vh;
+  float: right;
+  background-color: blue;
+  z-index: 10;
+}
+
+.filters {
+  height: 80px;
+  min-width: 1500px;
+  display: flex;
+  align-items: center;
+  background-color: #f3f6f8;
+}
+
+.content {
+  width: 100%;
+  position: relative;
+  height: 100%;
+  background-color: #f3f6f8;
+}
+
 
 .label-log {
   display: block;
@@ -63,12 +106,18 @@
   border-color: green;
   background-color: gainsboro;
 }
+.input-form:valid {
+  border-color: green;
+}
+.input-form:invalid {
+  border-color: red;
+}
 
 .centered {
   width: 900px;
   height: 80%;
   position: absolute;
-  margin-top: 100px;
+  margin-top: 50px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

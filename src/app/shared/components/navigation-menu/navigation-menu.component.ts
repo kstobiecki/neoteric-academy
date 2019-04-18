@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AppRouterUrls } from '../../../app-routing.config';
+import { SharedService } from '../../services/shared.service';
 
 @Component({
   selector: 'app-navigation-menu',
@@ -9,5 +10,9 @@ import { AppRouterUrls } from '../../../app-routing.config';
 export class NavigationMenuComponent {
   appRouterUrls = AppRouterUrls;
 
-  constructor() {}
-}
+  constructor(private sharedService: SharedService) {
+    }
+    onClick() {
+      this.sharedService.onClick();
+    }
+  }

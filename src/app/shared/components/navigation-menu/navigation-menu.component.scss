@@ -1,4 +1,10 @@
+nav {
+  height: 100%;
+}
+
 ul {
+  display: flex;
+  align-content: flex-end;
   list-style-type: none;
   margin-top: 20px;
   padding: 0;
@@ -25,19 +31,22 @@ li a:hover {
 }
 
 li header {
-  display: block;
+  display: flex;
+  justify-self: inherit;
+  align-self: flex-end;
   color: #99a1ab;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   background-color: #f3f6f8;
+  border: hidden;
   border-radius: 10px 10px 0px 0px;
 }
 
 li header:active {
   background-color: #f3f6f8;
   box-shadow: 0 -3px 6px 0;
-  align-self: end;
+  border: outset;
 }
 
 

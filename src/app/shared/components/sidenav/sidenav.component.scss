@@ -1,9 +1,36 @@
-.example-container {
-  position: absolute;
+ul {
+  display: flex;
+  align-content: flex-end;
+  list-style-type: none;
+  margin-top: 20px;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
   top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+}
+
+li {
+  background-color: blue;
+}
+
+
+
+li a {
+  display: block;
+  color: #99a1ab;
+  text-align: center;
+  text-decoration: none;
+  overflow: hidden;
+  margin: 0 10px 0 10px;
+}
+
+li a:hover {
+  color: #039be5;
+}
+
+.mat-flat-button {
+  border-radius: 20px;
+  background-color: #ff4081;
 }
 
 

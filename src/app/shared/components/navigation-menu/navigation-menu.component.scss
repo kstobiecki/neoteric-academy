@@ -1,0 +1,13 @@
+ul.menu-buttons {
+  display: flex;
+  justify-content: end;
+  list-style-type: none;
+    font-size:14px;
+    margin-right:40px;
+
+  a.menu-button {
+    display: block;
+    padding: 15px 10px;
+    color: #99a1ab; 
+  }
+}

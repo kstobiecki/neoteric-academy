@@ -2,3 +2,20 @@
 
 @import 'styles/_overrides';
 @import 'styles/_variables';
+
+body {
+  font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400;
+  color: $primary-color;;
+  background-color: $bg-color;
+  height: 100%;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin:0;
+
+  a {
+    text-decoration:none;
+  }
+}

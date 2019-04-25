@@ -1,1 +1,25 @@
-<p>login component</p>
+<div class="container">
+  <div class="login">
+    <h1>Login form</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate autocomplete="off">
+
+      <p>
+        <mat-form-field class="form-full-width">
+          <mat-label>Username</mat-label>
+          <input matInput placeholder="Username" formControlName="username" [(ngModel)]="username">
+          <mat-hint align="end">Try: "admin"</mat-hint>
+          <mat-error *ngIf="loginForm.get('username').invalid">This field is required!</mat-error>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="form-full-width">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="Password" type="password" formControlName="password" [(ngModel)]="password">
+          <mat-hint align="end">Try: "1234"</mat-hint>
+          <mat-error *ngIf="loginForm.get('password').invalid">This field is required!</mat-error>
+        </mat-form-field>
+      </p>
+      <button mat-button color="primary" [disabled]="!loginForm.valid">Log in</button>
+    </form>
+  </div>
+</div>

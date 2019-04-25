@@ -2,7 +2,7 @@
 
 @import 'styles/_overrides';
 @import 'styles/_variables';
-
+@import "../node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
 body {
   font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
   font-weight: 400;
@@ -18,4 +18,10 @@ body {
   a {
     text-decoration:none;
   }
+}
+
+.container{
+  width:900px;
+  margin-left:auto;
+  margin-right:auto;
 }

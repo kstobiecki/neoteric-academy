@@ -7,17 +7,17 @@ export const AppRoutes = {
   DEFAULT: 'offers',
   AUTH: 'auth',
   LOGIN: 'login',
-  SIGNIN: 'signin',
+  SIGNUP: 'signup',
 };
 
 export const AppRouterLinks = {
   DEFAULT: [AppRoutes.DEFAULT],
   LOGIN: [AppRoutes.AUTH, AppRoutes.LOGIN],
-  SIGNIN: [AppRoutes.AUTH, AppRoutes.SIGNIN],
+  SIGNUP: [AppRoutes.AUTH, AppRoutes.SIGNUP],
 };
 
 export const AppRouterUrls = {
   DEFAULT: `/${AppRoutes.DEFAULT}`,
   LOGIN: `/${AppRoutes.AUTH}/${AppRoutes.LOGIN}`,
-  SIGNIN: `/${AppRoutes.AUTH}/${AppRoutes.SIGNIN}`,
+  SIGNUP: `/${AppRoutes.AUTH}/${AppRoutes.SIGNUP}`,
 };

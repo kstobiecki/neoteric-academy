@@ -4,18 +4,18 @@ import { AuthService } from '../../services';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-auth-signin',
-  templateUrl: './auth-signin.component.html',
-  styleUrls: ['./auth-signin.component.scss'],
+  selector: 'app-auth-signup',
+  templateUrl: './auth-signup.component.html',
+  styleUrls: ['./auth-signup.component.scss'],
 })
-export class AuthSigninComponent {
+export class AuthSignupComponent {
 
-  signinForm: FormGroup;
+  signupForm: FormGroup;
   validated: boolean = false;
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
-    this.signinForm = new FormGroup({
+    this.signupForm = new FormGroup({
       'name': new FormControl(null, Validators.required),
       'username': new FormControl(null, Validators.required),
       'email': new FormControl(null, [Validators.required, Validators.email]),
@@ -25,8 +25,8 @@ export class AuthSigninComponent {
   }
 
   onSubmit() {
-    console.log(this.signinForm);
-    this.signinForm.reset();
+    console.log(this.signupForm);
+   // this.signupForm.reset();
   }
 
 }

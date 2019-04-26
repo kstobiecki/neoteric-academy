@@ -1,13 +1,13 @@
  <div class="container">
-   <div class="sign-in">
-     <h1>Sign-in form</h1>
-     <form [formGroup]="signinForm" (ngSubmit)="onSubmit()" novalidate autocomplete="off">
+   <div class="sign-up">
+     <h1>Sign-up forme</h1> 
+     <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" novalidate autocomplete="off">
        <p>
          <mat-form-field class="form-full-width">
            <mat-label>Name</mat-label>
            <input matInput placeholder="Name" formControlName="name">
            <mat-hint align="end">Enter full name.</mat-hint>
-           <mat-error *ngIf="signinForm.get('name').invalid">This field is required</mat-error>
+           <mat-error *ngIf="signupForm.get('name').invalid">This field is required</mat-error>
          </mat-form-field>
        </p>
        <p>
@@ -15,21 +15,21 @@
            <mat-label>Username</mat-label>
            <input matInput placeholder="Username" formControlName="username">
            <mat-hint align="end">Username would be your login.</mat-hint>
-           <mat-error *ngIf="signinForm.get('username').invalid">This field is required!</mat-error>
+           <mat-error *ngIf="signupForm.get('username').invalid">This field is required!</mat-error>
          </mat-form-field>
        </p>
        <p>
          <mat-form-field class="form-full-width">
            <mat-label>Email</mat-label>
            <input matInput placeholder="Enter your email" formControlName="email" required>
-           <mat-error *ngIf="signinForm.get('email').invalid">Please enter a valid email!</mat-error>
+           <mat-error *ngIf="signupForm.get('email').invalid">Please enter a valid email!</mat-error>
          </mat-form-field>
-       </p>
+        </p>
        <p>
          <mat-form-field class="form-full-width">
            <mat-label>Password</mat-label>
            <input matInput placeholder="Password" type="password" formControlName="password">
-           <mat-error *ngIf="signinForm.get('password').invalid">This field is required!</mat-error>
+           <mat-error *ngIf="signupForm.get('password').invalid">This field is required!</mat-error>
          </mat-form-field>
        </p>
        <p>
@@ -38,7 +38,7 @@
            <input matInput placeholder="Confirm password" type="password" formControlName="confirmPassword">
          </mat-form-field>
        </p>
-       <button mat-button color="primary" [disabled]="!signinForm.valid">Send</button>
+       <button mat-button color="primary" [disabled]="!signupForm.valid">Sign up</button>
      </form>
    </div>
  </div>

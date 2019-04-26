@@ -1,13 +1,13 @@
 import { AuthLoginComponent } from './auth-login/auth-login.component';
-import { AuthSigninComponent } from './auth-signin/auth-signin.component';
+import { AuthSignupComponent } from './auth-signup/auth-signup.component';
 
 
 export const AuthComponents = [
   AuthLoginComponent,
-  AuthSigninComponent
+  AuthSignupComponent
 ];
 
 export {
   AuthLoginComponent,
-  AuthSigninComponent
+  AuthSignupComponent
 };

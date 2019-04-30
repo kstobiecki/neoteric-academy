@@ -7,6 +7,7 @@ import { MaterialModule } from './material/material.module';
 import { CoreGuards } from './guards';
 import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './views/auth/auth.module';
+import { OffersModule } from './views/offers/offers.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { AuthModule } from './views/auth/auth.module';
     AppRoutingModule,
     MaterialModule,
     SharedModule,
+    OffersModule,
     AuthModule
   ],
   providers: [

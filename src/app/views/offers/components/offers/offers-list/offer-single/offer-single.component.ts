@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { Offer } from '../../offer.model';
+import { OffersService } from '../../../../services';
 
 
 @Component({
@@ -11,7 +12,8 @@ import { Offer } from '../../offer.model';
 export class OfferSingleComponent implements OnInit {
   @Input() offer: Offer;
   @Input() index: number;
-  constructor() { }
+
+  constructor(private offersService: OffersService) { }
 
   ngOnInit() {
   }

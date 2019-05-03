@@ -1,3 +1,7 @@
-<p>
-  places works!
-</p>
+<div class="buttons-row">
+  <button mat-raised-button (click)="onSelectPlace('All')">All</button>
+  <button 
+  (click)="onSelectPlace(place.city)"
+  *ngFor="let place of places; let i = index" mat-raised-button>
+  {{place.city}}</button>  
+</div>

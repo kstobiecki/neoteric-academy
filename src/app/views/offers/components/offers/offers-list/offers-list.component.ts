@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
 
 import { Offer } from '../offer.model';
-import { OffersService } from '../../../services';
+import { OffersService, PlacesService } from '../../../services';
 
 @Component({
   selector: 'app-offers-list',
@@ -11,15 +10,28 @@ import { OffersService } from '../../../services';
 })
 export class OffersListComponent implements OnInit {
   offers: Offer[];
+  placeFilter: string = "All" 
+  myTab = [1, 2, 3, 4, 5, 6, 7];
+
   constructor(
     private offerService: OffersService,
-    private router: Router,
-    private route: ActivatedRoute) { }
+    private placesService: PlacesService) {
+
+    this.placesService.filterValue.subscribe(
+      (filter: string) => {
+        console.log('FilterValue: : ' + filter);
+        this.placeFilter = filter;
+        this.offers = this.offerService.filterbyPlace( filter );
+        console.log(this.offers);
+      }
+
+    );
+  }
 
   ngOnInit() {
-      this.offers = this.offerService.getOffers();
+    this.offers = this.offerService.getOffers();
   }
-  onNewRecipe() {
-    this.router.navigate(['new'], {relativeTo: this.route});
-  }
+
+
+
 }

@@ -1,0 +1,25 @@
+.sidebar {
+  position: fixed;
+  top: 120px;
+  bottom: 0px;
+  overflow-y: scroll;
+
+  .sidebar-inner {
+    position: relative;
+  }
+}
+
+.offer-list {
+  width: 60%;
+  left: 0;
+}
+
+.map-container {
+  width: 40%;
+  bottom: 0;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,7 +1,3 @@
-<p>
-  offers-list works!
-</p>
-<app-offer-single 
-*ngFor="let offerEL of offers; let i = index" 
-[offer]="offerEl" 
-[index]="i"></app-offer-single>
+<h3>List of positions for: {{placeFilter}}</h3>
+
+<app-offer-single *ngFor="let offerEl of offers; let i = index" [offer]="offerEl" [index]="i"></app-offer-single>

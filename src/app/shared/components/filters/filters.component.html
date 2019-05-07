@@ -1,0 +1,12 @@
+<!-- <div class="buttons-row">
+  <button mat-raised-button (click)="onSelectPlace('All')">All</button>
+  <button (click)="onSelectPlace(place.city)" *ngFor="let place of places; let i = index" mat-raised-button>
+    {{place.city}}
+  </button>
+</div> -->
+<div class="buttons-row">
+  <button mat-raised-button [routerLink]="[appRouterUrls.DEFAULT, 'all']" (click)="onSelectPlace('All')">All</button>
+  <button [routerLink]="[appRouterUrls.DEFAULT, place.url]"  (click)="onSelectPlace(place.city)" *ngFor="let place of places; let i = index" mat-raised-button>
+    {{place.city}}
+  </button>
+</div>

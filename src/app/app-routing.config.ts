@@ -4,20 +4,32 @@
  * */
 
 export const AppRoutes = {
-  DEFAULT: 'offers',
+  DEFAULT: '',
+  OFFERS: 'offers',
+  PLACE: ':place',
+  TECHNOLOGY: ':technology',
   AUTH: 'auth',
   LOGIN: 'login',
   SIGNUP: 'signup',
+  SINGLE_OFFER: ':single-offer',
 };
 
 export const AppRouterLinks = {
   DEFAULT: [AppRoutes.DEFAULT],
   LOGIN: [AppRoutes.AUTH, AppRoutes.LOGIN],
   SIGNUP: [AppRoutes.AUTH, AppRoutes.SIGNUP],
+  PLACE: [AppRoutes.DEFAULT, AppRoutes.PLACE],
+  TECHNOLOGY: [AppRoutes.DEFAULT, AppRoutes.PLACE, AppRoutes.TECHNOLOGY],  
+  OFFERS: [AppRoutes.OFFERS],
+  SINGLE_OFFER: [AppRoutes.OFFERS, AppRoutes.SINGLE_OFFER],
 };
 
 export const AppRouterUrls = {
   DEFAULT: `/${AppRoutes.DEFAULT}`,
   LOGIN: `/${AppRoutes.AUTH}/${AppRoutes.LOGIN}`,
   SIGNUP: `/${AppRoutes.AUTH}/${AppRoutes.SIGNUP}`,
+  PLACE: `/${AppRoutes.DEFAULT}/${AppRoutes.PLACE}`,
+  TECHNOLOGY: `/${AppRoutes.DEFAULT}/${AppRoutes.PLACE}/${AppRoutes.TECHNOLOGY}`,
+  OFFERS: `/${AppRoutes.OFFERS}`,
+  SINGLE_OFFER: `/${AppRoutes.DEFAULT}/${AppRoutes.SINGLE_OFFER}`,
 };

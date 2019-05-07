@@ -1,13 +1,10 @@
 import { OffersService } from './offers.service';
-import { PlacesService } from './places.service';
 
 export const OffersServices = [
-    OffersService,
-    PlacesService
+    OffersService
   ];
   
   export {
-    OffersService,
-    PlacesService
+    OffersService
   };
   

@@ -1,22 +1,20 @@
-import { PlacesComponent } from './places/places.component';
-import { TechnogiesComponent } from './technogies/technogies.component';
 import { OffersComponent } from './offers/offers.component';
 import { OffersListComponent } from './offers/offers-list/offers-list.component';
 import { OfferSingleComponent } from './offers/offers-list/offer-single/offer-single.component';
+import { OffersItemComponent } from './offers/offers-list/offers-item/offers-item.component';
+
 
 export const OffersComponents = [
-    PlacesComponent,
-    TechnogiesComponent,
     OffersComponent,
     OffersListComponent,
-    OfferSingleComponent
+    OfferSingleComponent,
+    OffersItemComponent
   ];
   
   export {
-    PlacesComponent,
-    TechnogiesComponent,
     OffersComponent,
     OffersListComponent,
-    OfferSingleComponent  
+    OfferSingleComponent,
+    OffersItemComponent
   };
   

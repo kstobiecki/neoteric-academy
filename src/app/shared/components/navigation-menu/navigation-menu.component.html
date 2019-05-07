@@ -1,9 +1,10 @@
 <ul class="menu-buttons">
   <li><a class="menu-button" [routerLink]="appRouterUrls.LOGIN">Login</a></li>
   <li><a class="menu-button" [routerLink]="appRouterUrls.SIGNUP">Sign up</a></li>
-  <li><a class="menu-button" href="#">Magazine</a></li>
-  <li><a class="menu-button" href="#">Event</a></li>
-  <li><a class="menu-button" href="#">About us</a></li>
+  <li><a class="menu-button" [routerLink]="appRouterUrls.DEFAULT">Główna</a></li>
+  <li><a class="menu-button" [routerLink]="appRouterUrls.OFFERS">Offers</a></li>
+  <li><a class="menu-button" [routerLink]="[appRouterUrls.DEFAULT, 'gdynia']">Offer/Gdynia</a></li>
+  <li><a class="menu-button" [routerLink]="[appRouterUrls.DEFAULT, 'gdynia', 'php']">Trójmiasto/php</a></li>
   <li><a class="menu-button" href="#">Contact</a></li>
   <li><a class="menu-button" href="#">Post a Job</a></li>
 </ul>

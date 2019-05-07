@@ -1,53 +1,58 @@
 import { Injectable } from '@angular/core';
 
-import { Offer } from '../components/offers/offer.model';
+export interface Offer {
+  id: number;
+  position: string;
+  salary: string;
+  company: string;
+  place: string;
+}
 @Injectable()
 export class OffersService {
   private offers: Offer[] = [
-    new Offer(
-      1,
-      'Front End Developer',
-      '5000',
-      'Netguru',
-      'Trójmiasto'
-    ),
-    new Offer(
-      2,
-      "Backend End Developer",
-      "12000",
-      "Netguru",
-      "Warszawa"
-    ),
-    new Offer(
-      3,
-      "DevOps Engineer",
-      "4000",
-      "Netguru",
-      "Trójmiasto"
-    ),
-    new Offer(
-      4,
-      "PHP/Magento Developer",
-      "7000",
-      "Netguru",
-      "Wrocław"
-    ),
-    new Offer(
-      5,
-      "Node.js Developer",
-      "8000",
-      "Netguru",
-      "Warszawa"
-    ),
-    new Offer(
-      6,
-      "Test Engineer",
-      "6000",
-      "Netguru",
-      "Kraków"
-    )
-  ];
-
+    {
+      id: 1,
+      position: 'Front End Developer',
+      salary: '5000',
+      company: 'Netguru',
+      place: 'Gdańsk'
+    },
+    {
+      id: 2,
+      position: "Backend End Developer",
+      salary: "12000",
+      company: "Netguru",
+      place: "Warszawa"
+    },
+    {
+      id: 3,
+      position: "DevOps Engineer",
+      salary: "4000",
+      company: "Netguru",
+      place: "Gdynia"
+    },
+    {
+      id: 4,
+      position: "PHP/Magento Developer",
+      salary: "7000",
+      company: "Netguru",
+      place: "Wrocław"
+    },
+    {
+      id: 5,
+      position: "Node.js Developer",
+      salary: "8000",
+      company: "Netguru",
+      place: "Warszawa"
+    },
+    {
+      id: 6,
+      position: "Test Engineer",
+      salary: "6000",
+      company: "Netguru",
+      place: "Kraków"
+    }
+  ];  
 
   getOffers() {
     return this.offers.slice();
@@ -57,7 +62,7 @@ export class OffersService {
   }
 
   filterbyPlace(city: string) {
-    if (city === "All"){
+    if (city === "All") {
       return this.offers.slice();
     } else {
 

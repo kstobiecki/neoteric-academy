@@ -1,3 +1,5 @@
-<h3>List of positions for: {{placeFilter}}</h3>
+<h3>List of positions for: {{filter}}</h3>
 
-<app-offer-single *ngFor="let offerEl of offers; let i = index" [offer]="offerEl" [index]="i"></app-offer-single>
+<app-offers-item *ngFor="let offerEl of offers; let i = index" [offer]="offerEl" [index]="i"></app-offers-item>
+<!-- <router-outlet></router-outlet> -->
+

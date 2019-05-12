@@ -8,6 +8,7 @@ import { CoreGuards } from './guards';
 import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './views/auth/auth.module';
 import { OffersModule } from './views/offers/offers.module';
+import { OfferResolver } from './views/offers/services/offer-resolver.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { OffersModule } from './views/offers/offers.module';
     AuthModule
   ],
   providers: [
-    CoreGuards
+    CoreGuards,
+    OfferResolver
   ],
   bootstrap: [AppComponent]
 })

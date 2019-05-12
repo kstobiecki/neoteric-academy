@@ -5,7 +5,7 @@ import { Subscription } from 'rxjs';
 // import { Offer } from '../offer.model';
 import { FiltersService } from '../../../../../shared/services';
 import { OffersService } from '../../../services';
-import { FiltersInterface } from 'src/app/shared/services/filters.service';
+import { FiltersInterface, FiltersUrlInterface } from 'src/app/shared/services/filters.service';
 import { Offer } from '../../../services/offers.service'
 
 @Component({
@@ -16,9 +16,13 @@ import { Offer } from '../../../services/offers.service'
 export class OffersListComponent implements OnInit, OnDestroy {
   offers: Offer[];
   filters: FiltersInterface = this.filterService.getFilters();
-  filter: string = this.filterService.getFilter('place');
+  fromRouteParameters: Object;
+  urls: FiltersUrlInterface = this.filterService.getUrls();
   place: string;
+  technology: string;
+  level: string;
   filterSubscription: Subscription;
+  offerparams:Subscription;
 
   constructor(
     private offerService: OffersService,
@@ -31,23 +35,41 @@ export class OffersListComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     
-    console.log(this.offerService.getOffers());
     //Loading on init
-    this.place = this.route.snapshot.params['place'];    
-    this.filter = this.filterService.getCityByUrl(this.place);
-    this.offers = this.offerService.filterbyPlace(this.filter);
+  
+    this.fromRouteParameters =  {...this.route.snapshot.params};
+    
+    //ustawiamy brakujące filtry na domyślne wartości
+    Object.keys(this.urls).map((key) => {     
+      if (this.fromRouteParameters.hasOwnProperty(key)) {
+        this.urls[key] = this.fromRouteParameters[key];          
+      }
+    });  
+    
+    this.filterService.updateFiltersbyUrls(this.urls);
 
-    //loading when filterService.onSelectPlace
+    this.offers = this.offerService.filterOffers(this.filters);
+
+    //loading when filterService changed
     this.filterSubscription = this.filterService.filtersChanged.subscribe(
-      (filters: FiltersInterface) => {
-        this.filter = filters.place;
-        this.offers = this.offerService.filterbyPlace(this.filter);
+      (newFilters: FiltersInterface) => {
+        this.filters = newFilters;
+        this.offers = this.offerService.filterOffers(newFilters);
       }
     );
 
+    this.offerparams = this.route.params
+      .subscribe(
+        (params: Params) => {
+          this.offerService.paramsFromOffer.next(params);
+        }
+      );
+
   }
+
   ngOnDestroy() {
     this.filterSubscription.unsubscribe();
+    this.offerparams.unsubscribe();
   }
 
 

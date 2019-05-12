@@ -4,6 +4,7 @@ import { AppRouterUrls, AppRoutes } from './app-routing.config';
 import { AuthLoginComponent } from './views/auth/components';
 import { AuthSignupComponent } from './views/auth/components';
 import { OffersComponent, OffersListComponent, OfferSingleComponent } from './views/offers/components';
+import { OfferResolver } from './views/offers/services/offer-resolver.service';
 
 const routes: Routes = [
   // odkomentować gdy dodasz komponent offers
@@ -11,8 +12,8 @@ const routes: Routes = [
   {
     path: AppRoutes.OFFERS, component: OffersComponent,
     children: [
-      { path: '', component: OfferSingleComponent },
-      { path: AppRoutes.SINGLE_OFFER, component: OfferSingleComponent }
+      { path: '', component: OfferSingleComponent }, //TU PRZEKAZAC DATE DO WYSWIETLENIA PUSTEJ STRONY
+      { path: AppRoutes.SINGLE_OFFER, component: OfferSingleComponent, resolve: {offer: OfferResolver} }
     ]
   },
   {
@@ -35,12 +36,17 @@ const routes: Routes = [
       // },
       { path: AppRoutes.PLACE, component: OffersListComponent },
       { path: AppRoutes.PLACE +'/'+AppRoutes.TECHNOLOGY, component: OffersListComponent },
+      { path: AppRoutes.PLACE +'/'+ AppRoutes.TECHNOLOGY +'/'+ AppRoutes.LVL, component: OffersListComponent },
+      { path: AppRoutes.PLACE +'/'+ AppRoutes.TECHNOLOGY +'/'+ AppRoutes.LVL +'/'+ AppRoutes.SALARYMIN, component: OffersListComponent },
+      { path: AppRoutes.PLACE +'/'+ AppRoutes.TECHNOLOGY +'/'+ AppRoutes.LVL +'/'+ AppRoutes.SALARYMIN +'/'+ AppRoutes.SALARYMAX, component: OffersListComponent },
     ]
-  }
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(
+    routes    
+    )],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

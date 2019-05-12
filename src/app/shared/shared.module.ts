@@ -6,11 +6,16 @@ import { SharedComponents } from './components';
 import { SharedServices } from './services';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { NouisliderModule } from 'ng2-nouislider';
+
+import { FormsModule } from '@angular/forms';
 @NgModule({
   imports: [
     RouterModule,
     BrowserModule,
-    MaterialModule
+    MaterialModule,
+    NouisliderModule,
+    FormsModule    
   ],
   exports: [
     ...SharedComponents

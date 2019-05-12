@@ -1,12 +1,38 @@
-<!-- <div class="buttons-row">
-  <button mat-raised-button (click)="onSelectPlace('All')">All</button>
-  <button (click)="onSelectPlace(place.city)" *ngFor="let place of places; let i = index" mat-raised-button>
-    {{place.city}}
+<div class="buttons-row places">
+  <button 
+    (click)="onSelectPlace(place.city)"   
+    [routerLink]="[appRouterUrls.DEFAULT, place.url, urls.tech, urls.level]" 
+    routerLinkActive #rlaplace="routerLinkActive"
+    color="{{ place.url == urls.place ? 'primary' : '' }}"
+    *ngFor="let place of places; let i = index"
+     mat-raised-button>
+    {{place.city}} 
   </button>
-</div> -->
-<div class="buttons-row">
-  <button mat-raised-button [routerLink]="[appRouterUrls.DEFAULT, 'all']" (click)="onSelectPlace('All')">All</button>
-  <button [routerLink]="[appRouterUrls.DEFAULT, place.url]"  (click)="onSelectPlace(place.city)" *ngFor="let place of places; let i = index" mat-raised-button>
-    {{place.city}}
+</div>
+<div class="buttons-row technologies">
+  <button 
+    (click)="onSelectTech(tech.name)" 
+    [routerLink]="[appRouterUrls.DEFAULT, urls.place, tech.url, urls.level]" 
+    routerLinkActive #rlatech="routerLinkActive"
+    color="{{ tech.url == urls.tech ? 'primary' : '' }}"
+    *ngFor="let tech of technologies; let i = index" 
+    mat-raised-button>
+    {{tech.name}} 
   </button>
+</div>
+<div class="buttons-row levels">
+  <button 
+    (click)="onSelectLevel(level.name)" 
+    [routerLink]="[appRouterUrls.DEFAULT, urls.place, urls.tech, level.url]" 
+    routerLinkActive #rlalvl="routerLinkActive"
+    color="{{ level.url == urls.level ? 'primary' : '' }}"
+    *ngFor="let level of levels; let i = index" 
+    mat-raised-button>
+    {{level.name}}
+  </button>
+</div>
+<div class="salary-filter">
+    <code>salarySliderRange: {{ salarySliderRange  }}</code>
+
+    <nouislider  [config]="salarySliderConfig" [(ngModel)]="salarySliderRange" (change)="onChangeSlider($event)" [max]="12" ></nouislider>
 </div>

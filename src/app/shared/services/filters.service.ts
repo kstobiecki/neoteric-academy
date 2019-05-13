@@ -6,11 +6,13 @@ import { OffersService } from 'src/app/views/offers/services';
 export interface Place {
   city: string;
   url: string;
+  coordinates: number[];
 }
 
 export interface TechFilter {
   name: string;
   url: string;
+  icon: string;
 }
 
 export interface LevelFilter {
@@ -42,58 +44,71 @@ constructor(private offerService: OffersService) {}
   places: Place[] = [
     {
       city: 'All',
-      url: 'all'
+      url: 'all',
+      coordinates: [52.234982, 21.008490]
     },
     {
       city: 'Gdańsk',
-      url: 'gdansk'
+      url: 'gdansk',
+      coordinates: [54.352024, 18.646639]
     },
     {
       city: 'Gdynia',
-      url: 'gdynia'
+      url: 'gdynia',
+      coordinates: [54.518890, 18.530540]
     },
     {
       city: 'Warszawa',
-      url: 'warszawa'
+      url: 'warszawa',
+      coordinates: [52.229675, 21.012230]
     },
     {
       city: 'Wrocław',
-      url: 'wroclaw'
+      url: 'wroclaw',
+      coordinates: [51.107883, 17.038538]
     },
     {
       city: 'Kraków',
-      url: 'krakow'
+      url: 'krakow',
+      coordinates: [50.064651, 19.944981]
     },
     {
       city: 'Remote',
-      url:'remote'
+      url:'remote',
+      coordinates: []
     }
   ]
 
   technologies: TechFilter[] = [
     {
       name: 'All',
-      url: 'all'
+      url: 'all',
+      icon: 'https://bucket.justjoin.it/marker_icons_circle/other.png'
     },
     {
       name: 'HTML',
-      url: 'html'
+      url: 'html',
+      icon: 'https://bucket.justjoin.it/marker_icons_circle/html.png'
     },
     {
       name: 'JS',
-      url: 'javascript'
+      url: 'javascript',
+      icon: 'https://bucket.justjoin.it/marker_icons_circle/javascript.png'
     },
     {
       name: 'PHP',
-      url: 'php'
+      url: 'php',
+      icon: 'https://bucket.justjoin.it/marker_icons_circle/php.png'
     },
     {
       name: 'Ruby',
-      url: 'ruby'
+      url: 'ruby',
+      icon: 'https://bucket.justjoin.it/marker_icons_circle/ruby.png'
     },
     {
       name: 'Testing',
-      url: 'testing'
+      url: 'testing',
+      icon: 'https://bucket.justjoin.it/marker_icons_circle/testing.png'
     },
   ]
 

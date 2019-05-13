@@ -5,13 +5,15 @@ import { OffersComponents } from './components';
 import { OffersServices } from './services';
 import { BrowserModule } from '@angular/platform-browser';
 import { MaterialModule } from 'src/app/material/material.module';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 @NgModule({
   imports: [
     RouterModule,
     BrowserModule,
     MaterialModule,
-    SharedModule
+    SharedModule,
+    LeafletModule
   ],
   exports: [
     ...OffersComponents

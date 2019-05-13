@@ -13,6 +13,7 @@ export interface Offer {
   technologies: string[];
   levels: string[];
   url: string;
+  coordinates: number[];
 }
 @Injectable()
 export class OffersService {
@@ -32,7 +33,8 @@ export class OffersService {
       levels: [
         "Junior", "Mid"
       ],
-      url: "pierwsza-oferta"
+      url: "pierwsza-oferta",
+      coordinates:[54.386140, 18.646010]
     },
     {
       id: 2,
@@ -49,7 +51,8 @@ export class OffersService {
       levels: [
         "Junior", "Senior"
       ],
-      url: "druga-oferta"
+      url: "druga-oferta",
+      coordinates:[54.414669, 18.566380]
     },
     {
       id: 3,
@@ -61,12 +64,13 @@ export class OffersService {
         "Gdynia", "Remote"
       ],
       technologies: [
-        "RUBY", "HTML"
+        "Ruby", "HTML"
       ],
       levels: [
         "Mid"
       ],
-      url: "trzecia-oferta"
+      url: "trzecia-oferta",
+      coordinates:[54.493850, 18.534860]
     },
     {
       id: 4,
@@ -83,7 +87,8 @@ export class OffersService {
       levels: [
         "Junior", "Mid", "Senior"
       ],
-      url: "czwarta-oferta"
+      url: "czwarta-oferta",
+      coordinates:[51.120440, 17.018420]
     },
     {
       id: 5,
@@ -100,7 +105,8 @@ export class OffersService {
       levels: [
         "Junior", "Mid"
       ],
-      url: "piata-oferta"
+      url: "piata-oferta",
+      coordinates:[52.2279600, 21.007730]
     },
     {
       id: 6,
@@ -117,7 +123,8 @@ export class OffersService {
       levels: [
         "Mid"
       ],
-      url: "szosta-oferta"
+      url: "szosta-oferta",
+      coordinates:[50.050140, 19.961570]
     }
   ];
 

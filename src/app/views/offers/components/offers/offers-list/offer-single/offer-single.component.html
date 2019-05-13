@@ -1,12 +1,7 @@
-<div class="offer-single-details">
-  <p>Offers single details works!</p>
-</div>
 <div class="offer-list-item">
-    <h4>Position: {{ offer.position }}</h4>
-    <p>SalaryMin: {{ offer.salaryMin }}</p>
-    <p>SalaryMax: {{ offer.salaryMax }}</p>
-    <p>Company: {{ offer.company }}</p>
-    <p>Place: {{ offer.place }}</p>
-    <p>Technologies: <span *ngFor="let tech of offer.technologies">{{ tech }} </span></p>
-    <p>Levels: <span *ngFor="let level of offer.levels">{{ level }} </span></p>
-  </div>
+  <p>{{ offer.salaryMin }} - {{ offer.salaryMax }} gross/month</p>
+  <h2>Position: {{ offer.position }}</h2>
+  <p>Place: {{ offer.place }}</p>
+  <p>Technologies: <span *ngFor="let tech of offer.technologies">{{ tech }} </span></p>
+  <p>Levels: <span *ngFor="let level of offer.levels">{{ level }} </span></p>
+</div>

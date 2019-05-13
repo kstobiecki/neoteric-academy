@@ -6,16 +6,18 @@
 
   .sidebar-inner {
     position: relative;
+    width:100%;
+    height:100%;
   }
 }
 
 .offer-list {
-  width: 60%;
+  width: 50%;
   left: 0;
 }
 
 .map-container {
-  width: 40%;
+  width: 50%;
   bottom: 0;
   right: 0;
 

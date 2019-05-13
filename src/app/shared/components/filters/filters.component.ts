@@ -72,8 +72,8 @@ export class FiltersComponent implements OnInit, OnDestroy {
           this.urls.place = (params.place == undefined || !params.hasOwnProperty('place')) ? 'all' : params.place;
           this.urls.tech = (params.tech == undefined || !params.hasOwnProperty('tech')) ? 'all' : params.tech;
           this.urls.level = (params.tech == undefined || !params.hasOwnProperty('level')) ? 'all' : params.level;
-          this.urls.salaryMin = (params.salaryMin == undefined || !params.hasOwnProperty('salaryMin')) ? '0' : params.salaryMin;
-          this.urls.salaryMax = (params.salaryMax == undefined || !params.hasOwnProperty('salaryMax')) ? this.sliderMax : params.salaryMax;
+          this.urls.salaryMin = (params.salaryMin == undefined || params.salaryMin == '-' || !params.hasOwnProperty('salaryMin')) ? '0' : params.salaryMin;
+          this.urls.salaryMax = (params.salaryMax == undefined || params.salaryMax == '-'  || !params.hasOwnProperty('salaryMax')) ? this.sliderMax : params.salaryMax;
           
           
           this.salarySliderRange = [+this.urls.salaryMin,  +this.urls.salaryMax];

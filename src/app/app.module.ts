@@ -9,6 +9,7 @@ import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './views/auth/auth.module';
 import { OffersModule } from './views/offers/offers.module';
 import { OfferResolver } from './views/offers/services/offer-resolver.service';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { OfferResolver } from './views/offers/services/offer-resolver.service';
     MaterialModule,
     SharedModule,
     OffersModule,
-    AuthModule
+    AuthModule,
+    LeafletModule
   ],
   providers: [
     CoreGuards,

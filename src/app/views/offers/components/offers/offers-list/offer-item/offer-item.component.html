@@ -1,0 +1,18 @@
+<div class="offer-item"
+  routerLinkActive="active"
+  [routerLink]="[index]">
+  <div class="left">
+    <div class="border-item"></div>
+    <img src="{{ offer.imagePath }}"
+         alt="{{ offer.companyName }}"
+         style="width: 70px; height: 70px">
+  </div>
+  <div class="center">
+    <h4>{{ offer.jobTitle }}</h4>
+    <p>{{ offer.companyName }} {{ offer.city }}</p>
+  </div>
+  <div class="right">
+    <a>{{ offer.salary }}</a>
+    <p>{{ offer.technology }}</p>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+.tech-filter {
+  width: 100%;
+  height: 70px;
+  background-color: #f3f6f8;
+}
+
+.offer-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.offers-list{
+  background-color: #f3f6f8;
+  width: 50%;
+  height: 100%;
+}
+
+.offers-map {
+  background-color: #039be5;
+  width: 50%;
+  height: 100%;
+}

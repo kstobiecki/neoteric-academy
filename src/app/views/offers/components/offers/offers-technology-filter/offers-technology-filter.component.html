@@ -1,0 +1,15 @@
+<div class="location">
+  <mat-button-toggle-group>
+    <div class="tech-sign">
+      <mat-button-toggle>All</mat-button-toggle>
+    </div>
+    <div class="tech-sign"
+      *ngFor="let cm of techMain">
+      <mat-button-toggle
+      ><img src="{{ cm.path }}">
+      </mat-button-toggle>
+      <span> {{ cm.name }}</span>
+    </div>
+  </mat-button-toggle-group>
+</div>
+

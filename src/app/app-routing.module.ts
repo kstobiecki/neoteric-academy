@@ -3,14 +3,18 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppRouterUrls, AppRoutes } from './app-routing.config';
 import { AuthLoginComponent } from './views/auth/components';
 import { AuthSignupComponent } from './views/auth/components/auth-signup/auth-signup.component' ;
+import { OffersComponent } from './views/offers/components/offers/offers.component';
+import {OfferDetailComponent, OffersListComponent} from './views/offers/components';
 
 const routes: Routes = [
-  // odkomentować gdy dodasz komponent offers
-  // { path: '', redirectTo: AppRouterUrls.DEFAULT, pathMatch: 'full' },
+  { path: '', redirectTo: AppRouterUrls.DEFAULT, pathMatch: 'full' },
+  { path: AppRoutes.DEFAULT, component: OffersComponent, children: [
+      { path: '', component: OffersListComponent },
+      { path: ':id', component: OfferDetailComponent }
+    ]},
   {
     path: AppRoutes.AUTH,
     children: [
-      { path: '', pathMatch: 'full', redirectTo: AppRouterUrls.LOGIN },
       { path: AppRoutes.LOGIN, component: AuthLoginComponent },
       { path: AppRoutes.SIGNUP, component: AuthSignupComponent }
     ]

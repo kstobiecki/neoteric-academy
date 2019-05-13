@@ -12,6 +12,7 @@ export class NavigationMenuComponent {
 
   constructor(private sharedService: SharedService) {
     }
+
     onClick() {
       this.sharedService.onClick();
     }

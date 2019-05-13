@@ -1,0 +1,74 @@
+<div class="detail-content">
+  <cdk-virtual-scroll-viewport itemSize="10" class="example-viewport">
+    <div class="info">
+      <div class="logo-detail">
+        <img src="{{ offer.imagePath }}">
+      </div>
+      <div class="main-info">
+        <a>{{ offer.salary }} PLN net/month</a>
+        <p>{{ offer.jobTitle }}</p>
+        <a>{{ offer.companyName }}, {{ offer.city }}</a>
+      </div>
+    </div>
+    <div class="info-blocks">
+
+    </div>
+    <div>
+      <h3>Required skills</h3>
+    </div>
+    <div class="skills">
+      <div class="skill-bar-block" *ngFor="let skill of offer.skills">
+        <mat-progress-bar mode="determinate" value="{{ skill[0] }}"></mat-progress-bar>
+        <a>{{ skill[1] }}</a>
+      </div>
+    </div>
+    <div>
+      <h3>Description</h3>
+    </div>
+    <div class="description">
+      <div class="description-1">{{ offer.details }}</div>
+      <h3>Header 1</h3>
+      <ul>
+        <li>{{ offer.requirement }}</li>
+        <li>{{ offer.requirement }}</li>
+        <li>{{ offer.requirement }}</li>
+        <li>{{ offer.requirement }}</li>
+        <li>{{ offer.requirement }}</li>
+        <li>{{ offer.requirement }}</li>
+      </ul>
+      <h3>Header 2</h3>
+      <ul>
+        <li>{{ offer.requirement }}</li>
+        <li>{{ offer.requirement }}</li>
+        <li>{{ offer.requirement }}</li>
+        <li>{{ offer.requirement }}</li>
+        <li>{{ offer.requirement }}</li>
+        <li>{{ offer.requirement }}</li>
+      </ul>
+      <h3>Header 3</h3>
+      <ul>
+        <li>{{ offer.requirement }}</li>
+        <li>{{ offer.requirement }}</li>
+        <li>{{ offer.requirement }}</li>
+        <li>{{ offer.requirement }}</li>
+        <li>{{ offer.requirement }}</li>
+        <li>{{ offer.requirement }}</li>
+      </ul>
+      <h3>Header 4</h3>
+      <ul>
+        <li>{{ offer.requirement }}</li>
+        <li>{{ offer.requirement }}</li>
+        <li>{{ offer.requirement }}</li>
+        <li>{{ offer.requirement }}</li>
+        <li>{{ offer.requirement }}</li>
+        <li>{{ offer.requirement }}</li>
+      </ul>
+    </div>
+      <div class="label-log">
+        <mat-checkbox>I agree to the terms of service and privacy policy</mat-checkbox>
+        <div style="width: 15%" >
+          <button class="btn-log btn-rounded" type="submit">Apply</button>
+        </div>
+      </div>
+  </cdk-virtual-scroll-viewport>
+</div>

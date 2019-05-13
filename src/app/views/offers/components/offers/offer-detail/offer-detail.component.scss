@@ -1,0 +1,93 @@
+@mixin margin-card {
+  margin: 10px 5px 10px 5px;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.detail-content {
+  height: 100%;
+  background-color: #f3f6f8;
+}
+
+.mat-icon {
+  font-size: 20px;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+  border-radius: 60px;
+  margin-left: 33px;
+  margin-top: 50px;
+}
+
+.info {
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  background-color: green;
+  color: #f3f6f8;
+  font-size: 25px;
+  padding: 10px 0 10px 0;
+  @include margin-card;
+  margin-bottom: 80px;
+}
+
+.logo-detail {
+  width: 20%;
+}
+
+.main-info {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.skills {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 0 5px 40px 5px;
+  padding: 10px 0 10px 30px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.skill-bar-block {
+  width: 20%;
+  padding: 10px 0 10px 0;
+  margin: 0 15px 0 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+a {
+  margin-top: 10px;
+}
+
+.description {
+  @include margin-card;
+  padding-bottom: 20px;
+}
+.description-1 {
+  padding: 10px 5px 10px 15px;
+}
+
+h3 {
+  margin-left: 15px;
+}
+
+li {
+  padding: 5px 0 5px 0;
+}
+
+.apply-form {
+  @include margin-card;
+}
+
+.example-viewport {
+  height: 75vh;
+  width: 100%;
+  border: 0;
+}

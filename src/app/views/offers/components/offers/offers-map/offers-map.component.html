@@ -1,0 +1,6 @@
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+  <div *ngFor="let offerEl of offers">
+    <agm-marker [latitude]="offerEl.lat" [longitude]="offerEl.lng"
+                [iconUrl]="icon"></agm-marker>
+  </div>
+</agm-map>

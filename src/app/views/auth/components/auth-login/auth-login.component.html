@@ -44,12 +44,8 @@
             </mat-error>
           </div>
         </div>
-
-        <button class="btn-log btn-rounded" type="submit" (click)="onLogin()"
-                *ngIf="(!(angForm.controls['password'].invalid &&
-                        (angForm.controls['password'].dirty || angForm.controls['password'].touched)) &&
-                       !(angForm.controls['email'].invalid &&
-                        (angForm.controls['email'].dirty || angForm.controls['email'].touched))) && (username && password)"
+        <button [disabled]="(angForm.controls['password'].invalid) || (angForm.controls['email'].invalid)"
+                class="btn-log btn-rounded" type="submit" (click)="onLogin()"
         >Log in</button>
       </div>
     </form>

@@ -1,0 +1,48 @@
+.mat-button-toggle-group {
+  border: 0;
+  margin-left: 10px;
+}
+
+.location {
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-button-toggle {
+  border-radius: 20px;
+  width: 30px;
+  height: 30px;
+  margin: 0 5px 5px 5px;
+  font-size: 13px;
+  overflow: hidden;
+}
+
+.mat-button-toggle:hover {
+  box-shadow: 1px 2px #99a1ab;
+}
+
+.mat-button-toggle-checked {
+  border-color: #99a1ab;
+  border-style: solid;
+}
+
+img {
+  margin-left: -12.5px;
+  margin-top: -8px;
+  border-radius: 20px;
+  width: 30px;
+  height: 30px;
+}
+
+.tech-sign {
+  width: 50px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+span {
+  align-self: center;
+  font-size: 15px;
+}

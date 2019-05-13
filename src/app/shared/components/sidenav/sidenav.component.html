@@ -1,7 +1,11 @@
 <div>
   <ul class="left">
-    <li><a mat-flat-button [routerLink]="appRouterUrls.SIGNUP">signup</a></li>
-    <li><a mat-flat-button [routerLink]="appRouterUrls.LOGIN">login</a></li>
+    <li><a mat-flat-button
+           (click)="hideFilters()"
+           [routerLink]="appRouterUrls.SIGNUP">signup</a></li>
+    <li><a mat-flat-button
+           (click)="hideFilters()"
+           [routerLink]="appRouterUrls.LOGIN">login</a></li>
     <li class="right"><a mat-flat-button
                          (click)="onClick()"><mat-icon>close</mat-icon></a></li>
   </ul>

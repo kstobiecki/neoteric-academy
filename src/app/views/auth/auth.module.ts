@@ -4,7 +4,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { MaterialModule } from '../../material/material.module';
 import { AuthServices } from './services';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatFormFieldModule} from "@angular/material";
+import { MatFormFieldModule } from '@angular/material';
 
 
 // in this module we import every angular material module

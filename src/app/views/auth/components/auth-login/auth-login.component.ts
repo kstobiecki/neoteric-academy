@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {AuthService} from "../../services";
 
 @Component({
   selector: 'app-auth-login',
@@ -11,6 +12,7 @@ export class AuthLoginComponent implements OnInit {
   username: string = '';
   password: string = '';
   buttonCanDisplay;
+  hideFilters = true;
   passwordPattern = '[a-z].*[0-9]|[0-9].*[a-z]';
   emailPattern = '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$';
 
@@ -18,7 +20,8 @@ export class AuthLoginComponent implements OnInit {
 
   constructor(private router: Router,
               private route: ActivatedRoute,
-              private formBuilder: FormBuilder) {
+              private formBuilder: FormBuilder,
+              private authService: AuthService) {
     this.createForm();
     }
 
@@ -31,7 +34,7 @@ export class AuthLoginComponent implements OnInit {
   }
   ngOnInit() {
     this.buttonCanDisplay = false;
-
+    this.authService.hideFilters = this.hideFilters;
   }
 
   onLogin() {

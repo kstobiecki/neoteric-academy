@@ -5,7 +5,9 @@ import { Injectable } from '@angular/core';
 })
 
 export class SharedService {
+
   canDisplaySidenav = false;
+
   onClick() {
     this.canDisplaySidenav = !this.canDisplaySidenav;
   }

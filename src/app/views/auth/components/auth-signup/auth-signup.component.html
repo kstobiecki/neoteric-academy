@@ -54,12 +54,9 @@
         <mat-checkbox>I agree to the terms of service and privacy policy</mat-checkbox>
       </div>
 
-        <button class="btn-log btn-rounded" type="submit" (click)="onSignup()"
-                *ngIf="(!(angForm.controls['password'].invalid &&
-                    (angForm.controls['password'].dirty || angForm.controls['password'].touched)) &&
-                    !(angForm.controls['email'].invalid &&
-                    (angForm.controls['email'].dirty || angForm.controls['email'].touched))) && (username && password)"
-        >Sing Up</button>
+        <button [disabled]="(angForm.controls['password'].invalid) || (angForm.controls['email'].invalid)"
+                class="btn-log btn-rounded" type="submit" (click)="onSignup()"
+        >Sign up</button>
       </div>
     </form>
   </div>

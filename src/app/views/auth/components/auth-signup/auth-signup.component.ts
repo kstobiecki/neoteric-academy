@@ -12,6 +12,7 @@ import { AuthService } from '../../services';
 export class AuthSignupComponent implements OnInit {
   username: string = '';
   password: string = '';
+  hideFilters = true;
   passwordPattern = '[a-z].*[0-9]|[0-9].*[a-z]';
   emailPattern = '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$';
 
@@ -34,6 +35,7 @@ export class AuthSignupComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.authService.hideFilters = this.hideFilters;
   }
 
   onSignup() {

@@ -1,0 +1,18 @@
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+    <agm-marker *ngFor="let offerEl of offers; let i;"
+      [latitude]="offerEl.lat" [longitude]="offerEl.lng"
+                [iconUrl]="icon"
+                [animation]="offerEl.markerAnimation"
+                (mouseOver)="markerOver(offerEl)"
+                (mouseOut)="markerOut(offerEl)"
+    (markerClick)="onMarkerClick(i)">
+      <agm-info-window class="test1">
+        <img src="{{ offerEl.imagePath }}">
+        <div class="info-window-content">
+          <div class="info-text">{{ offerEl.jobTitle }}</div>
+          <div class="info-salary">{{ offerEl.salary }} PLN</div>
+          <div class="info-text">{{ offerEl.companyName }}</div>
+        </div>
+      </agm-info-window>
+    </agm-marker>
+</agm-map>

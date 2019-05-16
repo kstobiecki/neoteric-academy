@@ -1,0 +1,97 @@
+.mat-button-toggle-group {
+  border: 0;
+  margin-left: 10px;
+}
+
+.location {
+  display: flex;
+  flex-direction: row;
+}
+
+.mat-button-toggle {
+  border-radius: 20px;
+  width: 30px;
+  height: 30px;
+  margin: 0 5px 5px 5px;
+  font-size: 13px;
+  overflow: hidden;
+  color: #99a1ab;
+}
+
+.mat-button-toggle:hover {
+  box-shadow: 1px 2px #99a1ab;
+}
+
+.mat-button-toggle-checked {
+  border-color: #99a1ab;
+  border-style: solid;
+}
+
+img {
+  margin-left: -12.5px;
+  margin-top: -8px;
+  border-radius: 20px;
+  width: 30px;
+  height: 30px;
+}
+
+.tech-sign {
+  width: 40px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+span {
+  align-self: center;
+  font-size: 10px;
+  color: #99a1ab;
+}
+
+@mixin btn-rounded {
+  overflow: hidden;
+  height: 30px;
+  margin: 0 5px 5px 5px;
+  font-size: 13px;
+  color: gray;
+  border-radius: 20px;
+  border: hidden;
+  background-color: white;
+}
+
+.btn-rounded-salary {
+  @include btn-rounded;
+  width: 90px;
+}
+
+.btn-rounded-exp {
+  @include btn-rounded;
+  width: 125px;
+}
+
+a {
+  position: relative;
+  top: -1px;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0 0 500px;
+}
+
+mat-slider {
+  width: 100%;
+}
+
+.salary-range-panel {
+  position: absolute;
+  top: 48px;
+  width: 200px;
+  height: 100px;
+  background-color: white;
+  z-index: 40;
+  padding: 5px 10px 5px 10px;
+  border-radius: 3px;
+}

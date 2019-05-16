@@ -3,7 +3,8 @@
     <div class="nav-menu">
       <app-navigation-menu></app-navigation-menu>
     </div>
-    <div class="filters">
+    <div class="filters"
+         *ngIf="!hideFilters">
       <app-filter></app-filter>
     </div>
     <div class="content">

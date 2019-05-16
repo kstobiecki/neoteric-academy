@@ -1,5 +1,6 @@
-import {Component, DoCheck} from '@angular/core';
+import { Component, DoCheck } from '@angular/core';
 import { SharedService } from './shared/services/shared.service';
+import { AuthService } from './views/auth/services';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +9,14 @@ import { SharedService } from './shared/services/shared.service';
 })
 export class AppComponent implements DoCheck {
   test1 = true;
+  hideFilters;
 
-  constructor(private sharedService: SharedService ) {
+  constructor(private sharedService: SharedService,
+              private authService: AuthService) {
   }
 
   ngDoCheck() {
     this.test1 = this.sharedService.canDisplaySidenav;
+    this.hideFilters = this.authService.hideFilters;
   }
 }

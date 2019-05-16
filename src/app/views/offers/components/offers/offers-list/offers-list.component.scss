@@ -1,0 +1,24 @@
+.mat-grid-list {
+  background-color: #f3f6f8;
+  display: flex;
+  flex-direction: column;
+}
+
+.offer-box {
+  margin-bottom: 10px;
+}
+
+.example-viewport {
+  height: 700px;
+  width: 100%;
+  border: 0;
+}
+
+@media (max-width: 850px) {
+  .mat-grid-list {
+    width: 100%;
+  }
+  .example-viewport {
+    height: 100vh;
+  }
+}

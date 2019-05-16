@@ -9,6 +9,8 @@ import {
   MatIconModule,
   MatMenuModule,
 } from '@angular/material';
+import {ScrollDispatchModule} from '@angular/cdk/scrolling';
+import { Ng5SliderModule } from 'ng5-slider';
 
 
 // in this module we import every angular material module
@@ -21,7 +23,9 @@ import {
     MatSidenavModule,
     MatCheckboxModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    Ng5SliderModule,
+    ScrollDispatchModule
   ],
   exports: [
     CommonModule,
@@ -31,7 +35,8 @@ import {
     MatSidenavModule,
     MatCheckboxModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    ScrollDispatchModule
   ]
 })
 export class MaterialModule { }

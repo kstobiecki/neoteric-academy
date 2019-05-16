@@ -1,4 +1,5 @@
 export interface OffersInterface {
+  i: number;
   jobTitle: string;
   companyName: string;
   city: string;
@@ -10,4 +11,5 @@ export interface OffersInterface {
   details: string;
   requirement: string;
   skills: any;
+  markerAnimation: string;
 }

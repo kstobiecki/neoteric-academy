@@ -1,6 +1,10 @@
 <div class="detail-content">
   <cdk-virtual-scroll-viewport itemSize="10" class="example-viewport">
     <div class="info">
+      <button class="back-button"
+              [routerLink]="appRouterUrls.DEFAULT">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
       <div class="logo-detail">
         <img src="{{ offer.imagePath }}">
       </div>
@@ -10,8 +14,27 @@
         <a>{{ offer.companyName }}, {{ offer.city }}</a>
       </div>
     </div>
-    <div class="info-blocks">
-
+    <div class="tiles">
+      <div class="tile">
+        <div class="tile-circle"><mat-icon class="tile-icon" style="color: red">business</mat-icon></div>
+        <a class="tile-name">Company name</a>
+      </div>
+      <div class="tile">
+        <div class="tile-circle"><mat-icon class="tile-icon" style="color: orange">group</mat-icon></div>
+        <a class="tile-name">Company size</a>
+      </div>
+      <div class="tile">
+        <div class="tile-circle"><mat-icon class="tile-icon" style="color: purple">description</mat-icon></div>
+        <a class="tile-name">EMP. type</a>
+      </div>
+      <div class="tile">
+        <div class="tile-circle"><mat-icon class="tile-icon" style="color: forestgreen">trending_up</mat-icon></div>
+        <a class="tile-name">EXP. lvl</a>
+      </div>
+      <div class="tile">
+        <div class="tile-circle"><mat-icon class="tile-icon" style="color: blue">timelapse</mat-icon></div>
+        <a class="tile-name">Added</a>
+      </div>
     </div>
     <div>
       <h3>Required skills</h3>
@@ -67,7 +90,8 @@
       <div class="label-log">
         <mat-checkbox>I agree to the terms of service and privacy policy</mat-checkbox>
         <div style="width: 15%" >
-          <button class="btn-log btn-rounded" type="submit">Apply</button>
+          <button class="btn-log btn-rounded" type="submit"
+                  [routerLink]="appRouterUrls.DEFAULT">Apply</button>
         </div>
       </div>
   </cdk-virtual-scroll-viewport>

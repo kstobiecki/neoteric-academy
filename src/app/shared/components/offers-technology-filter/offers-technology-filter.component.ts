@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./offers-technology-filter.component.scss']
 })
 export class OffersTechnologyFilterComponent {
+  value: number = 0;
+  highValue: number = 33000;
+
   techMain = [
     {name: 'JS',
       path: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/4621/javascript.png'},
@@ -50,5 +53,20 @@ export class OffersTechnologyFilterComponent {
     {name: 'Other',
       path: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/4621/javascript.png'},
   ];
+
+  expLvl = [
+    {name: 'All'},
+    {name: 'Junior'},
+    {name: 'Mid'},
+    {name: 'Senior'},
+  ];
+
+  salarySlider = false;
+
+  onSalaryChoose() {
+    this.salarySlider = !this.salarySlider;
+    this.highValue = 33000;
+}
+
 }
 

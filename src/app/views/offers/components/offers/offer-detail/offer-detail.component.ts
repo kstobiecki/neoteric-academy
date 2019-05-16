@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OfferService } from '../../../services/offer.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { OffersInterface } from '../offers.interface';
+import { AppRouterUrls } from '../../../../../app-routing.config';
 
 @Component({
   selector: 'app-offer-detail',
@@ -11,6 +12,7 @@ import { OffersInterface } from '../offers.interface';
 export class OfferDetailComponent implements OnInit {
   offer: OffersInterface;
   id: any;
+  appRouterUrls = AppRouterUrls;
 
   constructor(private offerService: OfferService,
               private router: Router,

@@ -21,6 +21,10 @@ img {
   margin-top: 50px;
 }
 
+a {
+  font-size: 20px;
+}
+
 .info {
   height: 200px;
   display: flex;
@@ -28,7 +32,7 @@ img {
   background-color: green;
   color: #f3f6f8;
   font-size: 25px;
-  padding: 10px 0 10px 0;
+  padding: 10px 0 50px 0;
   @include margin-card;
   margin-bottom: 80px;
 }
@@ -42,6 +46,7 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: 30px;
 }
 
 .skills {
@@ -82,12 +87,69 @@ li {
   padding: 5px 0 5px 0;
 }
 
+.tiles {
+  display: flex;
+  flex-direction: row;
+  z-index: 2;
+  position: absolute;
+  top: 220px;
+  left: 20px;
+}
+
+.tile {
+  @include margin-card;
+  width: 140px;
+  height: 80px;
+  padding: 0 15px 0 15px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tile-circle {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -40px;
+  width: 35px;
+  height: 35px;
+  border-radius: 70px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.tile-name {
+  font-size: 14px;
+  color: #99a1ab;
+}
+
+.tile-icon {
+  font-size: 25px;
+}
+
+.back-button {
+  position: absolute;
+  z-index: 20;
+  margin-left: 20px;
+  color: white;
+  padding: 2px;
+  border: hidden;
+  background-color: rgba(0,0,0,0.2);
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+}
+
+
 .apply-form {
   @include margin-card;
 }
 
 .example-viewport {
-  height: 75vh;
+  height: 700px;
   width: 100%;
   border: 0;
 }

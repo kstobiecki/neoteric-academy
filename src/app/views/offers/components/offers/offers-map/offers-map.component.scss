@@ -1,3 +1,23 @@
 agm-map {
   height: 700px;
 }
+
+.info-window-content {
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  width: 40px;
+  height: 40px;
+  border-radius: 80px;
+}
+
+.info-text {
+  padding: 2px 0 2px 4px;
+}
+
+.info-salary {
+  color: green;
+  padding: 2px 0 2px 4px;
+}

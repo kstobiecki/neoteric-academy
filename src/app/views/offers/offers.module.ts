@@ -15,11 +15,14 @@ import { AgmCoreModule } from '@agm/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from '../../app-routing.module';
+import { RouterModule } from '@angular/router';
+import { Ng5SliderModule } from 'ng5-slider';
 
 
 // in this module we import every angular material module
 @NgModule({
   imports: [
+    RouterModule,
     BrowserModule,
     CommonModule,
     MaterialModule,
@@ -35,7 +38,8 @@ import { AppRoutingModule } from '../../app-routing.module';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAp6cnxztG7VN62TsfvgATQ3YVDfgCN0tw'
     }),
-    AppRoutingModule
+    AppRoutingModule,
+    Ng5SliderModule
   ],
   declarations: [
     ...OffersComponents

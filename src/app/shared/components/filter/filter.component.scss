@@ -10,6 +10,7 @@
   font-size: 16px;
   label: 0;
   overflow: hidden;
+  color: #99a1ab;
 }
 
 .mat-button-toggle:hover {
@@ -19,4 +20,24 @@
 .mat-button-toggle-checked {
  background: linear-gradient(to right, #ba68c8, #9c27b0);
 }
+
+.day-night {
+  float: right;
+  margin-left: 930px;
+}
+
+.day-icon {
+  position: absolute;
+  margin-left: -90px;
+  color: #99a1ab;
+  padding: 0 5px 0 5px;
+}
+
+.night-icon {
+  color: #99a1ab;
+  padding: 0 5px 0 5px;
+}
+
+
+
 

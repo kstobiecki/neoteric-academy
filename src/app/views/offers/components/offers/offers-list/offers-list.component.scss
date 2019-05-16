@@ -1,7 +1,5 @@
 .mat-grid-list {
   background-color: #f3f6f8;
-  position: fixed;
-  width: 50%;
   display: flex;
   flex-direction: column;
 }
@@ -11,7 +9,16 @@
 }
 
 .example-viewport {
-  height: 100vh;
+  height: 700px;
   width: 100%;
   border: 0;
+}
+
+@media (max-width: 850px) {
+  .mat-grid-list {
+    width: 100%;
+  }
+  .example-viewport {
+    height: 100vh;
+  }
 }

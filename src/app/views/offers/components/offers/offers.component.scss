@@ -17,7 +17,19 @@
 }
 
 .offers-map {
-  background-color: #039be5;
   width: 50%;
   height: 100%;
+}
+
+@media (max-width: 850px) {
+  .offers-map {
+    display: none;
+  }
+
+  .tech-filter {
+    display: none;
+  }
+  .offers-list{
+    width: 100%;
+  }
 }

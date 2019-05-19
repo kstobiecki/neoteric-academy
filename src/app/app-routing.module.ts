@@ -4,7 +4,8 @@ import { AppRouterUrls, AppRoutes } from './app-routing.config';
 import { AuthLoginComponent } from './views/auth/components';
 import { AuthSignupComponent } from './views/auth/components/auth-signup/auth-signup.component' ;
 import { OffersComponent } from './views/offers/components/offers/offers.component';
-import {OfferDetailComponent, OffersListComponent} from './views/offers/components';
+import { OfferDetailComponent, OffersListComponent } from './views/offers/components';
+import { BrandsComponent } from './views/brands/components/brands/brands.component';
 
 const routes: Routes = [
   { path: '', redirectTo: AppRouterUrls.DEFAULT, pathMatch: 'full' },
@@ -12,6 +13,7 @@ const routes: Routes = [
       { path: '', component: OffersListComponent },
       { path: ':id', component: OfferDetailComponent }
     ]},
+  { path: AppRoutes.BRANDS, component: BrandsComponent },
   {
     path: AppRoutes.AUTH,
     children: [

@@ -9,7 +9,7 @@ import {
   MatIconModule,
   MatMenuModule,
 } from '@angular/material';
-import {ScrollDispatchModule} from '@angular/cdk/scrolling';
+import { ScrollDispatchModule } from '@angular/cdk/scrolling';
 import { Ng5SliderModule } from 'ng5-slider';
 
 

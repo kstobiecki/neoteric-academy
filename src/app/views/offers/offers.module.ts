@@ -19,7 +19,6 @@ import { RouterModule } from '@angular/router';
 import { Ng5SliderModule } from 'ng5-slider';
 
 
-// in this module we import every angular material module
 @NgModule({
   imports: [
     RouterModule,

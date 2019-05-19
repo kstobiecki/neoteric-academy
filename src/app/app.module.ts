@@ -11,11 +11,13 @@ import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './views/auth/auth.module';
 import { OffersModule } from './views/offers/offers.module';
 import { OfferService } from './views/offers/services/offer.service';
+import { BrandsComponent } from './views/brands/components/brands/brands.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    BrandsComponent,
   ],
   imports: [
     BrowserModule,

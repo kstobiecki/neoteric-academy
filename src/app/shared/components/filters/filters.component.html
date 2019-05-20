@@ -1,38 +1,70 @@
-<div class="buttons-row places">
-  <button 
-    (click)="onSelectPlace(place.city)"   
-    [routerLink]="[appRouterUrls.DEFAULT, place.url, urls.tech, urls.level, urls.salaryMin, urls.salaryMax]" 
-    routerLinkActive #rlaplace="routerLinkActive"
-    color="{{ place.url == urls.place ? 'primary' : '' }}"
-    *ngFor="let place of places; let i = index"
-     mat-raised-button>
-    {{place.city}} 
+<div class="buttons-row places" fxHide.lt-md>
+  <button (click)="onSelectPlace(place.city)"
+    [routerLink]="[appRouterUrls.DEFAULT, place.url, urls.tech, urls.level, urls.salaryMin, urls.salaryMax]"
+    class="button-place button-rounded {{ place.url }} {{ place.url == urls.place ? 'active' : '' }}"
+    *ngFor="let place of places; let i = index">
+    {{place.city}}
   </button>
 </div>
-<div class="buttons-row technologies">
-  <button 
-    (click)="onSelectTech(tech.name)" 
-    [routerLink]="[appRouterUrls.DEFAULT, urls.place, tech.url, urls.level, urls.salaryMin, urls.salaryMax]" 
-    routerLinkActive #rlatech="routerLinkActive"
-    color="{{ tech.url == urls.tech ? 'primary' : '' }}"
-    *ngFor="let tech of technologies; let i = index" 
-    mat-raised-button>
-    {{tech.name}} 
-  </button>
-</div>
-<div class="buttons-row levels">
-  <button 
-    (click)="onSelectLevel(level.name)" 
-    [routerLink]="[appRouterUrls.DEFAULT, urls.place, urls.tech, level.url, urls.salaryMin, urls.salaryMax]" 
-    routerLinkActive #rlalvl="routerLinkActive"
-    color="{{ level.url == urls.level ? 'primary' : '' }}"
-    *ngFor="let level of levels; let i = index" 
-    mat-raised-button>
-    {{level.name}}
-  </button>
-</div>
-<div class="salary-filter">
-    <code>salarySliderRange: {{ salarySliderRange  }}</code>
+<div class="filters" fxLayout="row" fxLayoutAlign="space-between start" fxHide.lt-md>
+  <div class="left">
+    <div class="buttons-row technologies">
+      <button (click)="onSelectTech(tech.name)"
+        [routerLink]="[appRouterUrls.DEFAULT, urls.place, tech.url, urls.level, urls.salaryMin, urls.salaryMax]"
+        routerLinkActive #rlatech="routerLinkActive"
+        class="button-tech {{ tech.url }} {{ (tech.url == urls.tech || urls.tech == 'all') ? 'active' : '' }}"
+        *ngFor="let tech of technologies; let i = index">
+        <div *ngIf="tech.url != 'all'" class="icon-wrapper">
+          <i class="icon icon-{{ tech.url }}"></i>
+        </div>
+        <span class="tech-name">{{ tech.name }} </span>
+      </button>
+    </div>
+  </div>
+  <div class="right" fxLayout="row" fxLayoutAlign="end center" fxFlexAlign="stretch">
+    <div class="dropdown salary" appDropdown>
+      <button class="dropdown-toggle button-rounded" [ngClass]="{'active': isSliderActive}"> {{ sliderText }} <mat-icon>
+          arrow_drop_down</mat-icon></button>
+      <div class="dropdown-area start-right">
+        <p>Choose salary range</p>
+        <div class="salary-filter">
+          <nouislider [config]="salarySliderConfig" [(ngModel)]="salarySliderRange" (change)="onChangeSlider($event)"
+            [max]="12"></nouislider>
+        </div>
+      </div>
+    </div>
 
-    <nouislider  [config]="salarySliderConfig" [(ngModel)]="salarySliderRange" (change)="onChangeSlider($event)" [max]="12" ></nouislider>
+    <div class="dropdown levels" appDropdown>
+      <button class="dropdown-toggle  button-rounded" [ngClass]="{'active': isLevelActive}">
+        <mat-icon>trending_up</mat-icon> {{ levelText }}<mat-icon>arrow_drop_down</mat-icon>
+      </button>
+      <div class="dropdown-area start-right">
+        <a (click)="onSelectLevel(level.name)"
+          [routerLink]="[appRouterUrls.DEFAULT, urls.place, urls.tech, level.url, urls.salaryMin, urls.salaryMax]"
+          *ngFor="let level of levels; let i = index" class="dropdown-item">
+          {{level.name}}
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div fxHide fxShow.lt-md class="mobile-filters">
+  <div class="mobile-places">
+      <mat-form-field>
+          <mat-label>Select an option</mat-label>
+          <mat-select [(value)]="urls.place">
+            <mat-option value="{{place.city}}" *ngFor="let place of places; let i = index" >{{place.city}}</mat-option>  
+          </mat-select>
+        </mat-form-field>
+  </div>
+
+  <div class="mobile-tech">
+      <mat-form-field>
+          <mat-label>Select an option</mat-label>
+          <mat-select [(value)]="urls.tech">
+            <mat-option value="{{tech.name}}" *ngFor="let tech of technologies; let i = index" >{{tech.name}}</mat-option>  
+          </mat-select>
+        </mat-form-field>
+  </div>
 </div>

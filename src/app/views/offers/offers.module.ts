@@ -6,6 +6,7 @@ import { OffersServices } from './services';
 import { BrowserModule } from '@angular/platform-browser';
 import { MaterialModule } from 'src/app/material/material.module';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   imports: [
@@ -13,12 +14,13 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
     BrowserModule,
     MaterialModule,
     SharedModule,
-    LeafletModule
+    LeafletModule,
+    FlexLayoutModule
   ],
   exports: [
     ...OffersComponents
   ],
-  declarations: [
+  declarations: [  
     ...OffersComponents
   ],
   providers: [

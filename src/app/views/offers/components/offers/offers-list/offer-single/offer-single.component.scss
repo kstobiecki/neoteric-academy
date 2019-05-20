@@ -1,3 +1,389 @@
-.offer-list-item {
-  padding:20px;
+@import '../../../../../../../styles/variables';
+
+.offer-details {
+  padding: 0 15px 15px 15px;
+
+
+  .offer-header {
+    height: 235px;
+    position: relative;
+    margin: 0 0 80px 0;
+
+    .background {
+      height: 100%;
+      border-radius: 0 0 4px 4px;
+      background: url('../../../../../../../assets/images/header_background.png');
+      background-size: cover;
+      padding: 20px 20px 0 20px;
+
+    }
+
+    &>div {
+      height: 100%;
+
+      &.javascript,
+      &.js {
+        background: $javascript-bg;
+      }
+
+      &.php {
+        background: $php-bg;
+      }
+
+      &.ruby {
+        background: $ruby-bg;
+      }
+
+      &.html {
+        background: $html-bg;
+      }
+
+      &.security {
+        background: $security-bg;
+      }
+
+      &.java {
+        background: $java-bg;
+      }
+
+      &.devops {
+        background-image: $devops-bg;
+      }
+
+      &.scala {
+        background: $scala-bg;
+      }
+
+      &.python {
+        background: $python-bg;
+      }
+
+      &.css3 {
+        background: $css3-bg;
+      }
+
+      &.dotnet {
+        background: $dotnet-bg;
+      }
+
+      &.other {
+        background: $other-bg;
+      }
+
+      &.data {
+        background: $data-bg;
+      }
+
+      &.testing {
+        background: $testing-bg;
+      }
+    }
+
+    .back,
+    .share {
+      position: absolute;
+      color: #FFF;
+      padding: 2px;
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+    }
+
+    .back {
+      top: 10px;
+      left: 10px;
+    }
+
+    .share {
+      top: 10px;
+      right: 10px;
+    }
+
+    .offer-header-row {
+      display: flex;
+      align-items: center;
+      color: #FFF;
+    }
+
+    .circle-white {
+      flex-shrink: 0;
+      width: 147px;
+      height: 147px;
+      background-color: rgba(255, 255, 255, 0.3);
+      background-clip: padding-box;
+      position: relative;
+      border-radius: 50%;
+      border: 10px solid rgba(255, 255, 255, 0.15);
+    }
+
+
+    .company-logo-container {
+      width: 107px;
+      height: 107px;
+      border-radius: 50%;
+      background-color: #fff;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      .company-logo {
+        max-width: 75px;
+        max-height: 70px;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+      }
+    }
+
+    .apply-btn {
+      flex-shrink: 0;
+      color: #448AFF;
+      margin: 0 0 0 auto;
+      background-color: #fff;
+      text-transform: none;
+      box-shadow: none;
+
+      .email {
+        vertical-align: bottom;
+        margin: 0 1px 0 0;
+      }
+    }
+
+    //offer-header-row
+  }
+
+  // /.offer-header
+
+  .offer-essential-info {
+    margin: 0 0 0 25px;
+
+    .salary-row {
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    .offer-title-row {
+      .title {
+        font-size: 22px;
+        font-weight: 600;
+      }
+
+      .remote {
+        font-size: 11px;
+        background-color: #fff;
+        color: #448AFF;
+        padding: 3px 10px;
+        border-radius: 10px;
+        vertical-align: bottom;
+        line-height: 33px;
+      }
+
+    }
+
+    .offer-address {
+      font-size: 18px;
+    }
+  }
+
+  .tiles {
+    position: absolute;
+    padding: 0 20px;
+    transform: translateY(50%);
+    z-index: 10;
+
+    .tile {
+      max-width: calc(20% - 5px);
+      margin: 0 0 0 10px;
+      flex: 1;
+
+      &:first-child {
+        margin: 0;
+      }
+
+      &.company-name .icon {
+        color: #FF5252;
+      }
+
+      &.tile.company-size .icon {
+        color: #fb8c00;
+      }
+
+      &.emp-type .icon {
+        color: #ab47bc;
+      }
+
+      &.exp-level .icon {
+        color: #66BB6A;
+      }
+
+      &.age .icon {
+        color: #448AFF;
+      }
+
+
+    }
+
+    // /.tiles
+
+  }
+
+  .offer-details-content {
+    .company-profile-section {
+      display: flex;
+      align-items: center;
+      margin-bottom: 50px;
+
+      .cover-photo-container {
+        width: 200px;
+        margin-left: 20px;
+
+        .cover-photo {
+          padding-top: 56%;
+          background-size: cover;
+          border-radius: 5px;
+          width: 200px;
+        }
+      }
+
+      .short-description {
+        flex: 1;
+        margin-left: 20px;
+      }
+
+      .btn,
+      .btn-large {
+        text-transform: none;
+        background-color: #FFF;
+        color: #37474f;
+        font-size: 12px;
+        margin: 0 20px;
+      }
+
+      //.company-profile-section
+    }
+
+    // .offer-details-content
+  }
+
+  .card-section {
+    background-color: #FFF;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0 2px 18px 10px rgba(225, 232, 240, 0.7);
+    overflow: hidden;
+    margin-top: 40px;
+
+
+    .card-section-title {
+      background-color: #fff;
+      padding: 12px 20px;
+      border-bottom: 2px solid #f3f6f8;
+      font-weight: 600;
+      font-size: 18px;
+      position: static;
+    }
+
+
+    &.skill-section {
+      .card-content {
+        padding: 20px 10px;
+      }
+    }
+
+    .card-content {
+      padding: 20px;      
+       
+      strong {
+        font-weight: 600;
+      }
+
+      .trix-content {
+        line-height: 1.5;
+
+
+      }
+
+      .skills-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 0 -20px 0;
+
+        .skill-wrapper {
+          flex: 1 0 20%;
+          max-width: 20%;
+          margin: 0 0 20px 0;
+          display: flex;
+          padding: 0 5px;
+          justify-content: center;
+
+          .skill {
+            position: relative;
+
+            .skill-level {
+              display: flex;
+              flex-direction: row;
+              justify-content: flex-end;
+              margin-bottom: 4px;
+
+              .skill-level-dot {
+                background-color: #c7ced6;
+                display: block;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                margin: 0 0 0 10px;
+
+                &.fill {
+                  background-color: #ff4081;
+                }
+              }
+            }
+
+            .name {
+              font-weight: 600;
+              font-size: 16px;
+              word-break: break-word;
+            }
+
+            .level-title {
+              color: #99a1ab;
+            }
+          }
+        }
+      }
+    }
+
+    //.card-section 
+  }
+
+  .information-clause {
+    margin-top: 25px;
+    color: #99a1ab;
+    font-size: 11px;
+  }
+
+  .redirect-btn {
+    margin: 10px 0 30px 0;
+
+    &.btn,
+    &.btn-large {
+      text-decoration: none;
+      color: #fff;
+      background-color: #ff4081;
+      text-align: center;
+      letter-spacing: .5px;
+      transition: .2s ease-out;
+      cursor: pointer;
+    }
+  }
+
+  // .offer-details
+
 }

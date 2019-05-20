@@ -1,21 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../material/material.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { FlexLayoutModule } from '@angular/flex-layout'
 
 import { SharedComponents } from './components';
 import { SharedServices } from './services';
-import { BrowserModule } from '@angular/platform-browser';
-
 import { NouisliderModule } from 'ng2-nouislider';
 
-import { FormsModule } from '@angular/forms';
 @NgModule({
   imports: [
     RouterModule,
     BrowserModule,
     MaterialModule,
     NouisliderModule,
-    FormsModule    
+    FlexLayoutModule
+    
   ],
   exports: [
     ...SharedComponents

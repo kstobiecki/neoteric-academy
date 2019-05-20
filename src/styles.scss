@@ -1,29 +1,232 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import 'styles/_overrides';
 @import 'styles/_variables';
+@import 'styles/_overrides';
+
+@import "../node_modules/npm-font-open-sans/open-sans.scss";
+@import "./assets/icomoon-font.css";
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
 @import "../node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
 @import "~nouislider/distribute/nouislider.css";
 
+html {
+  font-size: 14px;
+  line-height: 1.5;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.87);
+}
+
 body {
-  font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-  color: $primary-color;;
+  color: $primary-color;
+  ;
   background-color: $bg-color;
   height: 100%;
-  overflow-x: hidden;
-  display: flex;
-  flex-direction: column;
   min-height: 100vh;
-  margin:0;
+  margin: 0;
 
   a {
-    text-decoration:none;
+    text-decoration: none;
+    color: #039be5;
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
-.container{
-  width:900px;
-  margin-left:auto;
-  margin-right:auto;
+.container {
+  width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  width: auto;
+}
+
+* {
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+button,
+.button,
+.btn {
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  display: inline-block;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 2rem;
+  text-transform: uppercase;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: .5px;
+  transition: .3s ease-out;
+
+  &:hover,
+  &:active {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  }
+
+  i {
+    font-size: 1.3rem;
+    line-height: inherit;
+  }
+}
+
+.button-rounded,
+.btn-rounded {
+  padding: 0 20px;
+  border-radius: 20px;
+}
+
+.wave-effect {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  vertical-align: middle;
+  z-index: 1;
+  transition: .3s ease-out;
+}
+
+.dropdown {
+
+  position: relative;
+
+  .dropdown-toggle {
+    background-color: #FFF;
+    color: #777;
+    box-shadow: none;
+    text-transform: none;
+    margin-left: 15px;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 12px;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    font-weight: 400;
+
+    &.active {
+      color: #fff;
+      background: linear-gradient(to right, #ba68c8, #9c27b0);
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    }
+
+    mat-icon {
+      vertical-align: middle;
+      margin-top: -4px;
+    }
+  }
+
+  .dropdown-area {
+    &.start-left {
+      left: 0;
+    }
+
+    &.start-right {
+      right: 0;
+    }
+
+    &.start-center {
+      left: -50%;
+    }
+
+
+
+
+    position: absolute;
+    top: 100%;
+
+    display: none;
+    background: $bg-white;
+    z-index: 1000;
+    min-width: 10rem;
+    padding:10px 20px;
+    margin: .125rem 0 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: .25rem;
+    width: auto;
+
+    .dropdown-item {
+      display: block;
+      width: 100%;
+      padding: .25rem 1.5rem;
+      clear: both;
+      font-weight: 400;
+      color: #212529;
+      text-align: inherit;
+      white-space: nowrap;
+      background-color: transparent;
+      border: 0;
+    }
+
+  }
+
+  &.open {
+    .dropdown-area {
+      display: block;
+    }
+  }
+}
+
+
+.tiles {
+  display: flex;
+  justify-content: unset;
+  padding: 0 20px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+
+  .tile {
+    border-radius: 4px;
+    background-color: #fff;
+    position: relative;
+    text-align: center;
+    padding: 20px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.08), 0 1px 5px 0 rgba(0, 0, 0, 0.06);
+
+    .icon {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      background: #fff;
+      font-size: 20px;
+      padding: 8px;
+      border-radius: 50%;
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.08), 0 1px 5px 0 rgba(0, 0, 0, 0.06);
+    }
+
+    .title {
+      white-space: nowrap;
+      color: #99a1ab;
+      font-size: 11px;
+    }
+  }
 }

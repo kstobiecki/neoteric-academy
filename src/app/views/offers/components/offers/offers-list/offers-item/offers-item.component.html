@@ -1,11 +1,56 @@
+<!-- <div class="offer-list-item" [routerLink]="[appRouterUrls.OFFERS, offer.url]">
+    <h4>Position: {{ offer.position }}</h4>
+    <p>SalaryMin: {{ offer.salaryMin }}</p>
+    <p>SalaryMax: {{ offer.salaryMax }}</p>
+    <p>Company: {{ offer.company }}</p>
+    <p>Place: {{ offer.place }}</p>
+    <p>Technologies: <span *ngFor="let tech of offer.technologies">{{ tech }} </span></p>
+    <p>Levels: <span *ngFor="let level of offer.levels">{{ level }} </span></p>
+  </div> -->
 
-<div class="offer-list-item" [routerLink]="[appRouterUrls.OFFERS, offer.url]">
-  <h4>Position: {{ offer.position }}</h4>
-  <p>SalaryMin: {{ offer.salaryMin }}</p>
-  <p>SalaryMax: {{ offer.salaryMax }}</p>
-  <p>Company: {{ offer.company }}</p>
-  <p>Place: {{ offer.place }}</p>
-  <p>Technologies: <span *ngFor="let tech of offer.technologies">{{ tech }} </span></p>
-  <p>Levels: <span *ngFor="let level of offer.levels">{{ level }} </span></p>
+
+<div class="offer-item {{ offer.technologies[0] | lowercase  }} offer-list-item" [routerLink]="[appRouterUrls.OFFERS, offer.url]">
+
+  <div class="item-border {{ offer.technologies[0] | lowercase  }}"></div>
+  <div class="item">
+    <div class="company-logo-container">
+      <img class="company-logo"
+        src="{{ offer.logo }}">
+    </div>
+    <div class="item-row">
+      <div class="primary-line" fxLayout="row" fxLayout.lt-sm="column">
+        <span class="title">
+            {{ offer.position }}
+        </span>
+        <div class="flex-right">
+          <span class="salary-row">
+            <span class="salary">{{ offer.salaryMin | salary }} - {{ offer.salaryMax | salary }} PLN</span>
+
+
+          </span>
+          <span class="age new">New</span>
+        </div>
+      </div>
+      <div class="secondary-line" fxHide.lt-sm>
+        <span class="company-info">
+          <span class="company-name">           
+            <mat-icon>location_city</mat-icon>
+            {{ offer.company }}
+          </span>
+          <span class="company-address">          
+            <mat-icon>place</mat-icon>
+            <!-- Przeskok 2, Warszawa -->
+            {{ offer.place }}
+          </span>
+        </span>
+        <div class="tags">
+
+          <span class="tag">CloudNative</span>
+          <span class="tag">AWS</span>
+          <span class="tag">Golang</span>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<hr>

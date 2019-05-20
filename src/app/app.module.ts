@@ -10,10 +10,11 @@ import { AuthModule } from './views/auth/auth.module';
 import { OffersModule } from './views/offers/offers.module';
 import { OfferResolver } from './views/offers/services/offer-resolver.service';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +23,9 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
     SharedModule,
     OffersModule,
     AuthModule,
-    LeafletModule
+    LeafletModule,
+    FlexLayoutModule
+     
   ],
   providers: [
     CoreGuards,

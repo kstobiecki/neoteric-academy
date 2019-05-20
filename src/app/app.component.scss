@@ -1,8 +1,6 @@
+@import '../styles/variables';
+
 header {
-  height: 65px;
-
-  display: flex;
-  justify-content: space-between;
-
-
+    height:65px;
+    background: $bg-white;
 }

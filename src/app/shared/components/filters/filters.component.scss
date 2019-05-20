@@ -1,9 +1,236 @@
+@import '../../../../styles/variables';
+
 .buttons-row {
-    button {
-      margin: 8px;
+
+  button {
+    margin: 8px;
+
+    &.button-place {
+      background-color: #FFF;
+      color: #777;
+      box-shadow: none;
+      text-transform: none;
+      margin-left: 15px;
+      height: 35px;
+      line-height: 35px;
+      padding: 0 12px;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+      font-weight: 400;
+
+      &.active {
+        color: #fff;
+        background: linear-gradient(to right, #ba68c8, #9c27b0);
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+      }
+
+      &:hover,
+      &:active {
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    &.button-tech {
+
+      background: none;
+      box-shadow: none;
+      padding: 0;
+      text-transform: none;
+      height: 55px;
+      transition: all 1.3s;
+
+      .icon-wrapper {
+        margin: 0 auto;
+        align-items: center;
+        justify-content: center;
+        box-shadow: none;
+        text-transform: none;
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        color: $bg-white;
+        border-radius: 50%;
+        background: $inactive-bg;
+        transition: all 0.3s;
+
+        .icon {
+          color: $bg-white;
+          font-size: 20px;
+          line-height: 35px;
+
+          &:before {
+            color: $bg-white;
+          }
+        }
+      }
+
+      .tech-name {
+        font-size: 0.8rem;
+        color: #99a1ab;
+        width: 100%;
+        display: inline-block;
+        text-align: center;
+        letter-spacing: 0;
+        height: auto;
+        line-height: 20px;
+        vertical-align: top;
+        max-height: 20px;
+      }
+
+      &.all {
+        background-color: #FFF;
+        color: #777;
+        box-shadow: none;
+        text-transform: none;
+        margin-left: 15px;
+        height: 35px;
+        line-height: 35px;
+        padding: 0 12px;
+        font-size: 0.9rem;
+        transition: all 0.3s;
+        font-weight: 400;
+        border-radius: 20px;
+        vertical-align: top;
+
+        .tech-name {
+          font-size: inherit;
+          letter-spacing: inherit;
+          color: #777;
+          vertical-align: middle;
+        }
+
+        &.active {
+          color: $bg-white;
+
+          .tech-name {
+            color: $bg-white;
+          }
+
+          background: linear-gradient(to right, #ba68c8, #9c27b0);
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+          0 1px 5px 0 rgba(0, 0, 0, 0.12),
+          0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        }
+
+        &:hover,
+        &:active {
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        }
+
+      }
+
+      &.active {
+        transition: all 0.3s;
+
+        &.javascript {
+          .icon-wrapper {
+            background: $javascript-bg;
+          }
+        }
+
+        &.php {
+          .icon-wrapper {
+            background: $php-bg;
+          }
+        }
+
+        &.ruby {
+          .icon-wrapper {
+            background: $ruby-bg;
+          }
+        }
+
+        &.html {
+          .icon-wrapper {
+            background: $html-bg;
+          }
+        }
+
+        &.security {
+          .icon-wrapper {
+            background: $security-bg;
+          }
+        }
+
+        &.java {
+          .icon-wrapper {
+            background: $java-bg;
+          }
+        }
+
+        &.devops {
+          .icon-wrapper {
+            background: $devops-bg;
+          }
+        }
+
+        &.scala {
+          .icon-wrapper {
+            background: $scala-bg;
+          }
+        }
+
+        &.python {
+          .icon-wrapper {
+            background: $python-bg;
+          }
+        }
+
+        &.css3 {
+          .icon-wrapper {
+            background: $css3-bg;
+          }
+        }
+
+        &.dotnet {
+          .icon-wrapper {
+            background: $dotnet-bg;
+          }
+        }
+
+        &.other {
+          .icon-wrapper {
+            background: $other-bg;
+          }
+        }
+
+        &.data {
+          .icon-wrapper {
+            background: $data-bg;
+          }
+        }
+
+        &.testing {
+          .icon-wrapper {
+            background: $testing-bg;
+          }
+        }
+
+      }
+
+
+      &:hover {
+        .icon-wrapper {
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        }
+      }
     }
   }
-.salary-filter{
-  max-width:400px;
-  margin:20px;
-}  
+}
+
+.right {
+  padding-right:30px;
+  .salary-filter {
+    width: 220px;
+    padding: 10px 20px;
+  }
+}
+
+
+.mobile-filters{
+  padding:15px;
+
+  .mat-select-value span{
+    line-height:20px;
+  }
+}

@@ -1,4 +1,229 @@
-.offer-list-item{
-    padding:20px;
-    cursor:pointer;
+@import '../../../../../../../styles/variables';
+
+.offer-list-item {
+  cursor: pointer;
+  display: flex;
+  text-decoration: none;
+  min-width: 0;
+  color: rgba(0, 0, 0, 0.87);
+  height: 100px;
+  font-size: 11px;
+  align-items: center;
+  flex: 1;
+  background: $bg-white;
+
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  height: 77px;
+  margin: 0 10px 12px 10px;
+  padding: 0;
+  background-color: #FFF;
+  display: flex;
+
+  &:hover {
+    transition: box-shadow 0.9s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.07), 0 3px 7px 0 rgba(0, 0, 0, 0.06);
+  }
+
+  .item-border {
+    width: 5px;
+    height: 100%;
+    border-radius: 6px 0 0 6px;
+
+
+    &.javascript,
+    &.js {
+      background: $javascript-bg;
+    }
+
+    &.php {
+      background: $php-bg;
+    }
+
+    &.ruby {
+      background: $ruby-bg;
+    }
+
+    &.html {
+      background: $html-bg;
+    }
+
+    &.security {
+      background: $security-bg;
+    }
+
+    &.java {
+      background: $java-bg;
+    }
+
+    &.devops {
+      background: $devops-bg;
+    }
+
+    &.scala {
+      background: $scala-bg;
+    }
+
+    &.python {
+      background: $python-bg;
+    }
+
+    &.css3 {
+      background: $css3-bg;
+    }
+
+    &.dotnet {
+      background: $dotnet-bg;
+    }
+
+    &.other {
+      background: $other-bg;
+    }
+
+    &.data {
+      background: $data-bg;
+    }
+
+    &.testing {
+      background: $testing-bg;
+    }
+
+  }
+
+  .item {
+    display: flex;
+    text-decoration: none;
+    min-width: 0;
+    color: rgba(0, 0, 0, 0.87);
+    height: 100%;
+    font-size: 11px;
+    align-items: center;
+    flex: 1;
+
+
+
+    .company-logo-container {
+      height: 40px;
+      flex: 0 0 125px;
+      position: relative;
+
+      .company-logo {
+        position: absolute;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        max-height: 40px;
+        max-width: 85px;
+        display: block;
+      }
+    }
+
+    .item-row {
+      width: 100%;
+      padding-right: 20px;
+
+      .primary-line {
+        color: #5a6371;
+        display: flex;
+        align-items: center;
+
+
+        .title {
+          font-size: 16px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          margin: 0 5px 0 0;
+          line-height: 23px;
+          font-weight: 600;
+        }
+
+        .flex-right {
+          margin-left: auto;
+          display: flex;
+          align-items: center;
+        }
+
+        .salary-row {
+          line-height: 11px;
+
+          .salary {
+            vertical-align: middle;
+            color: #1ec66c;
+            text-align: right;
+            font-size: 16px;
+            white-space: nowrap;
+          }
+
+
+        }
+
+        .age {
+          padding: 4px 7px;
+          border-radius: 16px;
+          white-space: nowrap;
+          line-height: 11px;
+          border: 1px solid #e0e0e0;
+          margin: 0 0 0 16px;
+
+          &.new {
+            color: #4256ef;
+            background-color: #d9ddfc;
+          }
+        }
+
+
+      }
+
+      .secondary-line {
+        display: flex;
+        margin: 6px 0 0 0;
+
+        .company-info {
+          color: #99a1ab;
+          white-space: nowrap;
+
+          .company-address {
+            margin: 0 0 0 15px;
+          }
+
+          .material-icons {
+            font-size: 14px;
+            color: #c7ced6;
+          }
+        }
+
+
+        .tags {
+          margin: 0 0 0 auto;
+          white-space: nowrap;
+          flex: 1;
+          display: flex;
+          justify-content: flex-end;
+          overflow: hidden;
+
+          .tag {
+            display: inline-block;
+            color: #99a1ab;
+            margin-left: 6px;
+            border: 1px solid #e0e0e0;
+            border-radius: 16px;
+            text-transform: lowercase;
+            padding: 4px 7px;
+            line-height: 11px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            min-width: 1ch;
+          }
+        }
+      }
+
+    }
+  }
+
+
 }

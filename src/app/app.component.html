@@ -1,10 +1,12 @@
-<header>
+<header fxLayout="row" fxLayoutAlign.lt-md="start end" fxLayoutAlign.gt-sm="space-between end" >
+  <div >
     <app-brand-header></app-brand-header>
-  <div class="main-menu">
+  </div>
+  <div class="main-menu" fxHide.lt-md>
     <app-navigation-menu></app-navigation-menu>
   </div>
 
 </header>
-<div class="content">
+<div class="content" fxLayout="column">
   <router-outlet></router-outlet>
 </div>

@@ -1,5 +1,25 @@
+$FontPathOpenSans: "../node_modules/npm-font-open-sans/fonts";
 $bg-color: #f3f6f8;
-$bg-white: #000000;
+$bg-white: #ffffff;
 
 $primary-color: #37474f;
 $title-color: #5a6371;
+
+$inactive-bg: linear-gradient(to right, #9193AA, #7D82A8);
+
+//  technologie colors
+$javascript-bg: linear-gradient(-90deg, #FFC706, #FFAF00);
+$ruby-bg:linear-gradient(-90deg, #ef5350, #f44336);
+$html-bg: linear-gradient(-90deg, #FF7D50, #FD5D21);
+$php-bg: linear-gradient(-90deg, #41ADFA, #157CFC);
+$security-bg: linear-gradient(-90deg, #536DFE, #0D47A1);
+$java-bg:linear-gradient(-90deg, #FA656B, #F9597A);
+$devops-bg:linear-gradient(-90deg, #5266E1, #8166E0);
+$scala-bg: linear-gradient(-90deg, #F86468, #F1464C);
+$python-bg:linear-gradient(-90deg, #1F5EB6, #1F7BC4);
+$css3-bg:#1572b6;
+$dotnet-bg: linear-gradient(-90deg, #3FC5E6, #4FA4FD);
+$c-bg: linear-gradient(-90deg, #2FCFBB, #37DD9C);
+$other-bg:linear-gradient(-90deg, #EC4CB6, #D44BD5);
+$data-bg:linear-gradient(-90deg, #009688, #00796B);
+$testing-bg:linear-gradient(-90deg, #89DB54, #65AF35);

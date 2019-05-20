@@ -1,27 +1,28 @@
-.sidebar {
+.main-content {
   position: fixed;
-  top: 320px;
-  bottom: 0px;
-  overflow-y: scroll;
-
-  .sidebar-inner {
-    position: relative;
-    width:100%;
-    height:100%;
-  }
-}
-
-.offer-list {
-  width: 50%;
-  left: 0;
-}
-
-.map-container {
-  width: 50%;
+  top: 190px;
   bottom: 0;
-  right: 0;
+  left:0;
+  right:0;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  .sidebar {
+
+    position: relative;
+    
+
+    .sidebar-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .offer-list {
+    overflow-y: scroll;
+  }
+
+  .map-container {
+    position: relative;
+  }
+
 }

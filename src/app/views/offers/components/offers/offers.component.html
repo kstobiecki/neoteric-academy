@@ -1,13 +1,14 @@
-<!-- <app-places></app-places> -->
 <app-filters></app-filters>
-<div class="sidebar offer-list">
-  <div class="sidebar-inner">
+
+<div class="main-content" fxLayout="row">
+  <div class="offer-list sidebar" fxFlex.gt-md="50" fxFlex.md="60" fxFlex.lt-md="100" >
+    <div class="sidebar-inner" >
       <router-outlet></router-outlet>
-    <!-- <app-offers-list></app-offers-list> -->
+    </div>
   </div>
-</div>
-<div class="sidebar map-container">
-  <div class="sidebar-inner">
-    <app-maps></app-maps>
+  <div class="map-container sidebar" fxFlex fxFill fxlayoutalign="center center" fxHide.lt-md>
+    <div class="sidebar-inner">
+      <app-maps></app-maps>
+    </div>
   </div>
 </div>

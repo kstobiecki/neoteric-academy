@@ -1,7 +1,177 @@
-<div class="offer-list-item">
+<!-- <div class="offer-list-item">
   <p>{{ offer.salaryMin }} - {{ offer.salaryMax }} gross/month</p>
   <h2>Position: {{ offer.position }}</h2>
   <p>Place: {{ offer.place }}</p>
   <p>Technologies: <span *ngFor="let tech of offer.technologies">{{ tech }} </span></p>
   <p>Levels: <span *ngFor="let level of offer.levels">{{ level }} </span></p>
+</div> -->
+
+<div class="offer-details">
+  <div>
+    <div class="offer-header">
+      <div class="{{ offer.technologies[0] | lowercase }} ">
+        <div class="background">
+          <!-- <i class="material-icons waves-effect waves back"></i> -->
+          
+          <!-- <i class="material-icons waves-effect waves share">share</i> -->
+          <div class="offer-header-row">
+            <div class="circle-white">
+              <div class="company-logo-container">
+                <img class="company-logo"
+                src="{{ offer.logo }}">
+              </div>
+            </div>
+            <div class="offer-essential-info">
+              <div class="salary-row">
+                <span class="salary">{{ offer.salaryMin | salary }} - {{ offer.salaryMax | salary }} PLN
+                  net/month</span>
+                
+                
+              </div>
+              <div class="offer-title-row">
+                <span class="title">{{ offer.position }}</span>
+                <!-- <span class="remote">
+                  Remote
+                </span> -->
+                
+              </div>
+              <div class="offer-address">
+                Świętojańska Office Center, {{ offer.place }}
+
+              </div>
+            </div>
+            
+            <!-- <div class="waves-effect waves btn btn-rounded apply-btn">
+              <i class="material-icons email">
+                
+              </i>
+              Apply
+            </div> -->
+            
+          </div>
+        </div>
+
+        <div class="tiles">
+          <div class="tile company-name">
+            <div class="icon material-icons">
+              
+            </div>
+            <div class="value">
+              <a ng-href="#" target="_blank" href="#">{{ offer.company}}</a>
+            </div>
+            <div class="title">
+              Company name
+            </div>
+          </div>
+          <div class="tile company-size">
+            <div class="icon material-icons">
+              
+            </div>
+            <div class="value">
+              {{ offer.size }}
+            </div>
+            <div class="title">
+              Company size
+            </div>
+          </div>
+          <div class="emp-type tile b2b">
+            <div class="icon material-icons">
+              
+            </div>
+            <div class="value">
+              {{ offer.emptype}}
+            </div>
+            <div class="title">
+              EMP. type
+            </div>
+          </div>
+          <div class="tile exp-level">
+            <div class="icon material-icons">
+              
+            </div>
+            <div class="value">
+              {{ offer.levels[0] }}
+            </div>
+            <div class="title">
+              EXP. lvl
+            </div>
+          </div>
+          <div class="tile age">
+            <div class="icon material-icons">
+              
+            </div>
+            <div class="value">
+              New
+            </div>
+            <div class="title">
+              Added
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="offer-details-content">
+    <div class="company-profile-section">
+      <div class="cover-photo-container">
+        <div class="cover-photo"
+          style="background-image: url('https://bucket.justjoin.it/companies/cover_photos/thumb/112bae070da1e5a748b8ec2827f97497c55d6209.jpg?1556635396');">
+        </div>
+      </div>
+      <div class="short-description">{{ offer.shortdesc }}...</div>
+      <a class="waves-effect waves btn btn-rounded" ng-href="#" target="_blank"
+        href="#">Brand Story</a>
+    </div>
+    
+    <div class="card-section skill-section">
+      <div class="card-section-title">
+        Required skills
+      </div>
+      <div class="card-content">
+        <div class="skills-container">
+          
+          <div class="skill-wrapper"
+          *ngFor="let skill of offer.skills">
+            <div class="skill">
+              <div class="skill-level">
+                
+                <div class="skill-level-dot"
+                *ngFor="let col of [0, 1, 2, 3, 4], let i = index"
+                [ngClass]="{'fill': i < skill.levelnumber }"
+                ></div>             
+                
+                
+              </div>
+              <div class="name"> {{ skill.name }}</div>
+              <div class="level-title">{{ skill.leveltitle }}</div>
+            </div>
+          </div>          
+          
+          
+         
+          
+        </div>
+      </div>
+    </div>
+    
+    <div class="card-section">
+      <div class="card-section-title">
+        Description
+      </div>
+      <div class="card-content description">
+        <div class="trix-content">
+          <div [innerHTML]="offer.description"></div>
+        </div>
+        <div class="information-clause">
+            Informujemy, że administratorem danych jest Netguru S. A. z siedzibą w Poznaniu, ul. Wojskowa 6 (dalej jako "administrator"). Masz prawo do żądania dostępu do swoich danych osobowych, ich sprostowania, usunięcia lub ograniczenia przetwarzania, prawo do wniesienia sprzeciwu wobec przetwarzania, a także prawo do przenoszenia danych oraz wniesienia skargi do organu nadzorczego. Dane osobowe przetwarzane będą w celu realizacji procesu rekrutacji. Podanie danych w zakresie wynikającym z ustawy z dnia 26 czerwca 1974 r. Kodeks pracy jest obowiązkowe. W pozostałym zakresie podanie danych jest dobrowolne. Odmowa podania danych obowiązkowych może skutkować brakiem możliwości przeprowadzenia procesu rekrutacji. Administrator przetwarza dane obowiązkowe na podstawie ciążącego na nim obowiązku prawnego, zaś w zakresie danych dodatkowych podstawą przetwarzania jest zgoda. Dane osobowe będą przetwarzane do czasu zakończenia postępowania rekrutacyjnego i przez okres możliwości dochodzenia ewentualnych roszczeń, a w przypadku wyrażenia zgody na udział w przyszłych postępowaniach rekrutacyjnych - do czasu wycofania tej zgody. Zgoda na przetwarzanie danych osobowych może zostać wycofana w dowolnym momencie. Odbiorcą danych jest serwis Just Join IT oraz inne podmioty, którym powierzyliśmy przetwarzanie danych w związku z rekrutacją
+          <!-- <span class="link">more</span> -->
+        </div>
+      </div>
+    </div>
+    <div id="top-apply-container"></div>
+    
+    
+    <!-- <div class="redirect-btn waves-effect waves btn btn-rounded">Apply</div> -->
+  </div>
 </div>

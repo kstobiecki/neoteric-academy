@@ -1,3 +1,43 @@
+.sidenav-content {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidenav-header {
+  font-size: 30px;
+  font-weight: bold;
+  color: black;
+  align-self: center;
+  padding: 15px 0 15px 0;
+}
+
+.sidenav-line {
+  width: 80%;
+  align-self: center;
+  border-bottom: 1px solid rgba(180,180,180,0.3);
+  margin-bottom: 20px;
+}
+
+.sidenav-button {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 35px;
+  color: rgba(0,0,0,0.75);
+  align-self: flex-start;
+  padding: 10px 0 0 28px;
+  font-size: 15px;
+  cursor: pointer;
+}
+.sidenav-button:hover {
+  background-color: rgba(180,180,180,0.3);
+}
+
+.sidenav-login-buttons {
+  align-self: center;
+}
+
 ul {
   display: flex;
   align-content: flex-end;
@@ -26,6 +66,12 @@ li a {
 
 li a:hover {
   color: #039be5;
+}
+
+p {
+  position: relative;
+  top: -11px;
+  margin-left: 20px;
 }
 
 .mat-flat-button {

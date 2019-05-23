@@ -19,4 +19,8 @@ export class AppComponent implements DoCheck {
     this.test1 = this.sharedService.canDisplaySidenav;
     this.hideFilters = this.authService.hideFilters;
   }
+
+  onClick() {
+    this.sharedService.onClick();
+  }
 }

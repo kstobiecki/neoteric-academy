@@ -4,6 +4,7 @@
 @import 'styles/_variables';
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import url('https://fonts.googleapis.com/css?family=Inconsolata');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 body {
   margin: 0;
@@ -11,7 +12,17 @@ body {
 .container {
   width: 100%;
   height: 100%;
-  font-family: 'Inconsolata', monospace;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container-overlay {
+  position: absolute;
+  background-color: rgba(0,0,0,0.5);
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 5;
 }
 
 .mat-button-toggle-label-content{
@@ -191,6 +202,7 @@ body {
   0% { width: 0px; }
   100% { width: 250px; }
 }
+
 @media (max-width: 850px) {
   .filters {
     display: none;

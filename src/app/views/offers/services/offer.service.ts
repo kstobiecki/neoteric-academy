@@ -417,7 +417,10 @@ export class OfferService {
   getZoom() {
     return this.zoom;
   }
-  getAnimation(index: number) {
-    return this.offers[index].markerAnimation;
+  getOfferCityName(index: number) {
+    return this.offers[index].city;
+  }
+  getOfferTech(index: number) {
+    return this.offers[index].technology;
   }
 }

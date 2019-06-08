@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OfferService } from '../../../services/offer.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import {OffersInterface} from "../offers.interface";
 
 @Component({
   selector: 'app-offers-list',
@@ -17,5 +18,4 @@ export class OffersListComponent implements OnInit {
   ngOnInit() {
     this.offers = this.offerService.getOffers();
   }
-
 }

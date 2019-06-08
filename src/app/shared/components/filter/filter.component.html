@@ -4,7 +4,7 @@
       <mat-button-toggle-group>
         <mat-button-toggle *ngFor="let cm of citiesMain">{{ cm.name }}</mat-button-toggle>
         <mat-button-toggle [matMenuTriggerFor]="menu">
-          <mat-icon>arrow_drop_down</mat-icon>
+          <mat-icon>more_horiz</mat-icon>
         </mat-button-toggle>
         <mat-menu #menu="matMenu">
           <button mat-menu-item

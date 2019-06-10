@@ -1,3 +1,6 @@
+import * as moment from 'moment';
+import _date = moment.unitOfTime._date;
+
 export interface OffersInterface {
   i: number;
   jobTitle: string;
@@ -12,4 +15,5 @@ export interface OffersInterface {
   requirement: string;
   skills: any;
   markerAnimation: string;
+  date;
 }

@@ -25,6 +25,7 @@ export class OfferService {
       requirement: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit',
       skills: [[60, 'skill1'], [40, 'skill2'], [100, 'skill3'], [60, 'skill4'], [80, 'skill5'],
         [20, 'skill6'], [20, 'skill7'], [20, 'skill8'], [60, 'skill9'], [20, 'skill10']],
+      date: '2019-06-09',
     },
     {
       i: 1,
@@ -47,6 +48,7 @@ export class OfferService {
       requirement: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit',
       skills: [[60, 'skill1'], [40, 'skill2'], [100, 'skill3'], [60, 'skill4'], [80, 'skill5'],
         [20, 'skill6'], [20, 'skill7'], [20, 'skill8'], [60, 'skill9'], [20, 'skill10']],
+      date: '2019-06-04',
     },
     {
       i: 2,
@@ -69,6 +71,7 @@ export class OfferService {
       requirement: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit',
       skills: [[60, 'skill1'], [40, 'skill2'], [100, 'skill3'], [60, 'skill4'], [80, 'skill5'],
         [20, 'skill6'], [20, 'skill7'], [20, 'skill8'], [60, 'skill9'], [20, 'skill10']],
+      date: '2019-06-05',
     },
     {
       i: 3,
@@ -91,6 +94,7 @@ export class OfferService {
       requirement: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit',
       skills: [[60, 'skill1'], [100, 'skill2'], [100, 'skill3'],
         [20, 'skill4'], [60, 'skill5'], [20, 'skill6'], [20, 'skill7'], [40, 'skill8']],
+      date: '2019-06-05',
     },
     {
       i: 4,
@@ -113,6 +117,7 @@ export class OfferService {
       requirement: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit',
       skills: [[60, 'skill1'], [40, 'skill2'], [100, 'skill3'], [60, 'skill4'], [80, 'skill5'],
         [20, 'skill6'], [20, 'skill7'], [20, 'skill8'], [60, 'skill9'], [20, 'skill10']],
+      date: '2019-06-04',
     },
     {
       i: 5,
@@ -135,6 +140,7 @@ export class OfferService {
       requirement: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit',
       skills: [[60, 'skill1'], [40, 'skill2'], [100, 'skill3'], [60, 'skill4'], [80, 'skill5'],
         [20, 'skill6'], [20, 'skill7'], [20, 'skill8'], [60, 'skill9'], [20, 'skill10']],
+      date: '2019-06-07',
     },
     {
       i: 6,
@@ -157,6 +163,7 @@ export class OfferService {
       requirement: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit',
       skills: [[60, 'skill1'], [40, 'skill2'], [100, 'skill3'], [60, 'skill4'], [80, 'skill5'],
         [20, 'skill6'], [20, 'skill7'], [20, 'skill8'], [60, 'skill9'], [20, 'skill10']],
+      date: '2019-06-10',
     },
     {
       i: 7,
@@ -179,6 +186,7 @@ export class OfferService {
       requirement: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit',
       skills: [[60, 'skill1'], [40, 'skill2'], [100, 'skill3'], [60, 'skill4'], [80, 'skill5'],
         [20, 'skill6'], [20, 'skill7'], [20, 'skill8'], [60, 'skill9'], [20, 'skill10']],
+      date: '2019-06-10',
     },
     {
       i: 8,
@@ -201,6 +209,7 @@ export class OfferService {
       requirement: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit',
       skills: [[60, 'skill1'], [40, 'skill2'], [100, 'skill3'], [60, 'skill4'], [80, 'skill5'],
         [20, 'skill6'], [20, 'skill7'], [20, 'skill8'], [60, 'skill9'], [20, 'skill10']],
+      date: '2019-06-04',
     },
     {
       i: 9,
@@ -223,6 +232,7 @@ export class OfferService {
       requirement: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit',
       skills: [[60, 'skill1'], [40, 'skill2'], [100, 'skill3'], [60, 'skill4'], [80, 'skill5'],
         [20, 'skill6'], [20, 'skill7'], [20, 'skill8'], [60, 'skill9'], [20, 'skill10']],
+      date: '2019-06-04',
     },
     {
       i: 10,
@@ -245,6 +255,7 @@ export class OfferService {
       requirement: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit',
       skills: [[60, 'skill1'], [40, 'skill2'], [100, 'skill3'], [60, 'skill4'], [80, 'skill5'],
         [20, 'skill6'], [20, 'skill7'], [20, 'skill8'], [60, 'skill9'], [20, 'skill10']],
+      date: '2019-06-04',
     },
     {i: 11,
       jobTitle: 'Frontend Developer',
@@ -266,6 +277,7 @@ export class OfferService {
       requirement: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit',
       skills: [[60, 'skill1'], [40, 'skill2'], [100, 'skill3'], [60, 'skill4'], [80, 'skill5'],
         [20, 'skill6'], [20, 'skill7'], [20, 'skill8'], [60, 'skill9'], [20, 'skill10']],
+      date: '2019-06-04',
     },
     {
       i: 12,
@@ -288,6 +300,7 @@ export class OfferService {
       requirement: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit',
       skills: [[60, 'skill1'], [40, 'skill2'], [100, 'skill3'], [60, 'skill4'], [80, 'skill5'],
         [20, 'skill6'], [20, 'skill7'], [20, 'skill8'], [60, 'skill9'], [20, 'skill10']],
+      date: '2019-06-04',
     },
     {
       i: 13,
@@ -310,6 +323,7 @@ export class OfferService {
       requirement: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit',
       skills: [[60, 'skill1'], [40, 'skill2'], [100, 'skill3'], [60, 'skill4'], [80, 'skill5'],
         [20, 'skill6'], [20, 'skill7'], [20, 'skill8'], [60, 'skill9'], [20, 'skill10']],
+      date: '2019-06-04',
     },
     {
       i: 14,
@@ -332,6 +346,7 @@ export class OfferService {
       requirement: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit',
       skills: [[60, 'skill1'], [40, 'skill2'], [100, 'skill3'], [60, 'skill4'], [80, 'skill5'],
         [20, 'skill6'], [20, 'skill7'], [20, 'skill8'], [60, 'skill9'], [20, 'skill10']],
+      date: '2019-06-04',
     },
     {
       i: 15,
@@ -354,6 +369,7 @@ export class OfferService {
       requirement: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit',
       skills: [[60, 'skill1'], [40, 'skill2'], [100, 'skill3'], [60, 'skill4'], [80, 'skill5'],
         [20, 'skill6'], [20, 'skill7'], [20, 'skill8'], [60, 'skill9'], [20, 'skill10']],
+      date: '2019-06-04',
     },
     {
       i: 16,
@@ -376,6 +392,7 @@ export class OfferService {
       requirement: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit',
       skills: [[60, 'skill1'], [40, 'skill2'], [100, 'skill3'], [60, 'skill4'], [80, 'skill5'],
         [20, 'skill6'], [20, 'skill7'], [20, 'skill8'], [60, 'skill9'], [20, 'skill10']],
+      date: '2019-06-04',
     },
     {
       i: 17,
@@ -398,6 +415,7 @@ export class OfferService {
       requirement: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit',
       skills: [[60, 'skill1'], [40, 'skill2'], [100, 'skill3'], [60, 'skill4'], [80, 'skill5'],
         [20, 'skill6'], [20, 'skill7'], [20, 'skill8'], [60, 'skill9'], [20, 'skill10']],
+      date: '2019-06-04',
     }
   ];
   zoom = 8;
@@ -416,11 +434,5 @@ export class OfferService {
   }
   getZoom() {
     return this.zoom;
-  }
-  getOfferCityName(index: number) {
-    return this.offers[index].city;
-  }
-  getOfferTech(index: number) {
-    return this.offers[index].technology;
   }
 }

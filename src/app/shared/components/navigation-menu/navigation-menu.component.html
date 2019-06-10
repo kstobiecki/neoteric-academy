@@ -5,7 +5,9 @@
       <li class="right"><a mat-flat-button>About us</a></li>
       <li class="right"><a mat-flat-button>Event</a></li>
       <li class="right"><a mat-flat-button>Magazine</a></li>
-      <li class="right"><button class="btn-nav btn-rounded">Post a Job</button></li>
+      <li class="right"><button class="btn-nav btn-rounded"
+                        [routerLink]="appRouterUrls.NEW_OFFER"
+                        (click)="hideFilters()">Post a Job</button></li>
       <li class="right"><a mat-flat-button
                         (click)="onClick()"><mat-icon>more_vert</mat-icon></a></li>
     </ul>

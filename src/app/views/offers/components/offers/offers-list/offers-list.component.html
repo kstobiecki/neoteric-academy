@@ -11,8 +11,7 @@
       *ngFor="let offerEl of offers; let i = index">
       <app-offer-item
         [offer]="offerEl"
-        [index]="i"
-        (click)="filterCity()"></app-offer-item>
+        [index]="i"></app-offer-item>
     </div>
     </cdk-virtual-scroll-viewport>
   </mat-grid-list>

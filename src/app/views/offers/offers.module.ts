@@ -17,6 +17,7 @@ import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from '../../app-routing.module';
 import { RouterModule } from '@angular/router';
 import { Ng5SliderModule } from 'ng5-slider';
+import { NewOfferComponent } from './components/offers/new-offer/new-offer.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { Ng5SliderModule } from 'ng5-slider';
     Ng5SliderModule
   ],
   declarations: [
-    ...OffersComponents
+    ...OffersComponents,
+    NewOfferComponent
   ],
   providers: [
   ]

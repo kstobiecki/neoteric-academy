@@ -1,0 +1,83 @@
+<div class="centered">
+  <form class="new-offer-form-log">
+    <div class="row">
+      <div>
+        <label for="company" class="label-log">Company name</label>
+        <input id="company" name="companyName" class="new-input-form" placeholder="Your company name...">
+      </div>
+      <div>
+        <label for="img" class="label-log">Company logo</label>
+        <input id="img" name="imgPath" class="new-input-form" placeholder="Image path...">
+      </div>
+      <div>
+        <label for="city" class="label-log">City</label>
+        <select id="city" name="city" class="new-input-form" style="height: 40px">
+          <option *ngFor="let city of cities">{{ city.name }}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label for="lat" class="label-log">Latitude</label>
+        <input id="lat" type="number" max="85" min="-85" name="lat" class="new-input-form" style="width: 50px">
+      </div>
+      <div>
+        <label for="lng" class="label-log">Longitude</label>
+        <input id="lng" type="number" max="180" min="-180" name="lng" class="new-input-form" style="width: 50px">
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label for="job" class="label-log">Job title</label>
+        <input id="job" name="jobTitle" class="new-input-form" placeholder="Job title...">
+      </div>
+      <div>
+        <label for="tech" class="label-log">Technology</label>
+        <select id="tech" name="technology" class="new-input-form" style="height: 40px">
+          <option *ngFor="let tech of techs">{{ tech.name }}</option>
+        </select>
+      </div>
+      <div>
+        <label for="exp" class="label-log">Experience</label>
+        <select id="exp" name="experience" class="new-input-form" style="height: 40px">
+          <option *ngFor="let exp of expLvl">{{ exp.name }}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label for="salary" class="label-log">Salary [PLN]</label>
+        <input id="salary" type="number" name="salary" class="new-input-form" placeholder="Salary min">
+        -
+        <input id="salary" type="number" name="salary" class="new-input-form" placeholder="Salary max">
+      </div>
+    </div>
+
+    <div>
+      <label for="details" class="label-log">Details</label>
+      <textarea id="details" name="details" class="details new-input-form" placeholder="Job details...">
+      </textarea>
+    </div>
+
+    <div>
+      <form #formRef="ngForm">
+        <div *ngFor="let word2 of words2; let in=index">
+          <div class="form-group">
+            <input type="text" [(ngModel)]="words2[in].value" name="name{{ in }}" class="new-input-form" #name="ngModel" required />
+            <input type="number" min="1" max="10" class="new-input-form" required />
+          </div>
+        </div>
+        <button class="mat-button"
+                [disabled]="!formRef.form.valid" (click)="add()">Add skill</button>
+      </form>
+    </div>
+
+    <div>
+      <button class="btn-log btn-rounded"
+              [routerLink]="appRouterUrls.DEFAULT">Add offer</button>
+    </div>
+  </form>
+</div>

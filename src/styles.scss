@@ -70,9 +70,7 @@ body {
   display: block;
   font-size: 10px;
   font-weight: 900;
-  margin-bottom: 5px;
-  margin-top: 20px;
-  margin-left: 20px;
+  margin: 20px 0 5px 0;
   text-transform: uppercase;
 }
 
@@ -140,8 +138,7 @@ body {
   width: 900px;
   height: 80%;
   position: absolute;
-  margin-top: 50px;
-  top: 50%;
+  margin-top: -150px;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;

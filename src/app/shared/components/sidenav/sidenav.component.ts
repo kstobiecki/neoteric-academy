@@ -16,8 +16,6 @@ export class SidenavComponent {
   }
   onClick() {
     this.sharedService.onClick();
-  }
-  hideFilters() {
     this.authService.hideFilters = true;
   }
 }

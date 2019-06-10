@@ -21,7 +21,7 @@ export class FilterComponent implements OnInit {
      {name: 'Bydgoszcz'},
      {name: 'Częstochowa'},
      {name: 'Gliwice'},
-     {name: 'Katowica'},
+     {name: 'Katowice'},
      {name: 'Kielce'},
      {name: 'Lublin'},
      {name: 'Łódź'},

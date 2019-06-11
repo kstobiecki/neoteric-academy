@@ -6,6 +6,9 @@ import { MaterialModule } from '../material/material.module';
 import { FormsModule } from '@angular/forms';
 import { FilterComponent } from './components/filter/filter.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientService } from './http';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   imports: [
@@ -16,7 +19,8 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
     MatCardModule,
     MatMenuModule,
     MatChipsModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    HttpClientModule
   ],
   exports: [
     ...SharedComponents,
@@ -29,7 +33,8 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
     SidenavComponent,
   ],
   providers: [
-
+    HttpClientService,
+    CookieService
   ]
 })
 export class SharedModule { }

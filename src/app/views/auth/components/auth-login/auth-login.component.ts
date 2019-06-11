@@ -37,14 +37,11 @@ export class AuthLoginComponent implements OnInit {
     this.authService.hideFilters = this.hideFilters;
   }
 
-  onLogin() {
+  async onLogin() {
     if (this.username === 'admin@gmail.com' && this.password === 'adminadmin1234') {
       alert('You are logged as ' + this.username);
       this.router.navigate(['']);
-    } else if (this.username === '' || this.password === '') {
-      alert('Enter email and password');
-    } else {
-      alert('Wrong login or password');
-    }
+      }
+    await this.authService.login(this.username, this.password);
   }
 }

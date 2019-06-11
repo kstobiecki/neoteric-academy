@@ -12,6 +12,8 @@ import { AuthModule } from './views/auth/auth.module';
 import { OffersModule } from './views/offers/offers.module';
 import { OfferService } from './views/offers/services/offer.service';
 import { BrandsComponent } from './views/brands/components/brands/brands.component';
+import { HttpClientService } from './shared/http';
+import { CookieService } from 'ngx-cookie-service';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { BrandsComponent } from './views/brands/components/brands/brands.compone
   ],
   providers: [
     CoreGuards,
-    OfferService
+    OfferService,
+    HttpClientService,
+    CookieService
   ],
   bootstrap: [AppComponent]
 })

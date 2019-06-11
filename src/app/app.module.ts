@@ -11,15 +11,14 @@ import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './views/auth/auth.module';
 import { OffersModule } from './views/offers/offers.module';
 import { OfferService } from './views/offers/services/offer.service';
-import { BrandsComponent } from './views/brands/components/brands/brands.component';
 import { HttpClientService } from './shared/http';
 import { CookieService } from 'ngx-cookie-service';
+import { BrandsModule } from './views/brands/brands.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    BrandsComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +28,7 @@ import { CookieService } from 'ngx-cookie-service';
     SharedModule,
     AuthModule,
     OffersModule,
+    BrandsModule,
     HttpClientModule,
   ],
   providers: [

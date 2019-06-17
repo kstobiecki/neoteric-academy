@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppRouterUrls } from '../../../../../app-routing.config';
+import { OfferService } from '../../../services/offer.service';
 
 @Component({
   selector: 'app-new-offer',
@@ -48,16 +49,32 @@ export class NewOfferComponent implements OnInit {
     {name: 'Mid'},
     {name: 'Senior'},
   ];
+  jobTitle: string = '';
+  companyName: string = '';
+  city: string = '';
+  technology: string = '';
+  expLevel: string = '';
+  salary = {min: null, max: null};
+  imagePath: string = '';
+  latitude: number;
+  long: number;
+  details: string = '';
+  requirements: string = '';
 
-  words2 = [{value: ''}];
+  skills = [{name: '', lvl: null}];
 
-  constructor() { }
+  constructor(private offerService: OfferService) { }
 
   ngOnInit() {
   }
 
   add() {
-    this.words2.push({value: ''});
+    this.skills.push({name: '', lvl: null});
+  }
+
+  async addOffer() {
+    // tslint:disable-next-line:max-line-length
+    await this.offerService.addOffer(this.jobTitle, this.companyName, this.city, this.technology, this.expLevel, this.salary, this.imagePath, this.latitude, this.long, this.details, this.requirements, this.skills);
   }
 
 }

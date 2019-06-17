@@ -20,7 +20,7 @@ export class AuthService {
 
   async login(email: string, password: string): Promise<any> {
     let user: LoginUser = {email: email, password: password};
-    let resp = await  this.httpClientService.OnLogin(user);
+    let resp = await  this.httpClientService.onLogin(user);
     return resp;
   }
 }

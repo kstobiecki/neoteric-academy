@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { OffersInterface } from '../components/offers/offers.interface';
+import { HttpClientService } from '../../../shared/http';
+import { Offer } from '../../../shared/shared.interface';
 
 @Injectable()
 export class OfferService {
@@ -420,6 +422,9 @@ export class OfferService {
   ];
   zoom = 8;
 
+  constructor(private  httpClientService: HttpClientService) {}
+
+
   getOffers() {
     return this.offers.slice();
   }
@@ -434,5 +439,12 @@ export class OfferService {
   }
   getZoom() {
     return this.zoom;
+  }
+
+  // tslint:disable-next-line:max-line-length
+  async addOffer(jobTitle: string, companyName: string, city: string, technology: string, expLvl: string, salary: {min: number, max: number}, imagePath: string, latitude: number, long: number, details: string, requirements: string, skills: {name: string, lvl: any}[]): Promise<any> {
+    let offer: Offer = {jobTitle: jobTitle, companyName: companyName, city: city, technology: technology, expLvl: expLvl, salary: salary, imagePath: imagePath, latitude: latitude, long: long, details: details, requirements: requirements, skills: skills};
+     let resp = await this.httpClientService.addOffer(offer);
+     return resp;
   }
 }

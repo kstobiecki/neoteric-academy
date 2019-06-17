@@ -42,7 +42,4 @@ export class AuthSignupComponent implements OnInit {
     await this.authService.register(this.username, this.username, this.password);
   }
 
-  redirect() {
-    this.router.navigate(['../login'], {relativeTo: this.route});
-  }
 }

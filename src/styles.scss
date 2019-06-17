@@ -96,8 +96,9 @@ body {
 }
 
 .form-log {
-  margin-top: 40px;
-  margin-left: 165px;
+  position: absolute;
+  margin-left: 120%;
+  margin-top: 50px;
   width: 60%;
   background-color: white;
   border-style: outset;
@@ -137,8 +138,6 @@ body {
 .centered {
   width: 900px;
   height: 80%;
-  position: absolute;
-  margin-top: -150px;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;

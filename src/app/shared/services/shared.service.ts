@@ -8,6 +8,8 @@ export class SharedService {
 
   canDisplaySidenav = false;
 
+  filterParams = [];
+
   onClick() {
     this.canDisplaySidenav = !this.canDisplaySidenav;
   }

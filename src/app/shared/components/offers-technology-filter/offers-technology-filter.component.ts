@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./offers-technology-filter.component.scss']
 })
 export class OffersTechnologyFilterComponent {
+  techVal: string;
+  salaryVal: string;
+  expVal: string;
   value: number = 0;
   highValue: number = 33000;
 
@@ -67,6 +70,21 @@ export class OffersTechnologyFilterComponent {
     this.salarySlider = !this.salarySlider;
     this.highValue = 33000;
 }
+
+  onTechChange(val: string) {
+    this.techVal = val;
+    console.log(this.techVal);
+  }
+
+  onSalaryChange(val: string) {
+    this.salaryVal = val;
+    console.log(this.salaryVal);
+  }
+
+  onExpChange(val: string) {
+    this.expVal = val;
+    console.log(this.expVal);
+  }
 
 }
 

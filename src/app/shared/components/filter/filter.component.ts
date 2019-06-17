@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./filter.component.scss']
 })
 export class FilterComponent implements OnInit {
+  cityVal: string;
    citiesMain = [
      {name: 'All'},
      {name: 'Warszawa'},
@@ -37,4 +38,8 @@ export class FilterComponent implements OnInit {
   ngOnInit() {
   }
 
+  onValChange(val: string) {
+    this.cityVal = val;
+    console.log(this.cityVal);
+  }
 }

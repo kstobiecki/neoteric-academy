@@ -6,7 +6,7 @@ import { CookieService } from 'ngx-cookie-service';
 
 @Injectable()
 export class HttpClientService {
-  serverPath: string = 'http://localhost:5000';
+  serverPath: string = 'https://justjoinit-backend.herokuapp.com';
   authorization: string = '/auth';
   register: string = '/register';
   login: string = '/login';

@@ -17,9 +17,16 @@ export interface Offer {
   expLvl: string;
   salary: {min: number, max: number};
   imagePath: string;
-  latitude: number;
-  long: number;
+  lat: number;
+  lng: number;
   details: string;
   requirements: string;
   skills: {name: string, lvl: number}[];
+}
+
+export interface ParamsInterface {
+  city: string;
+  technology: string;
+  expLvl: string;
+  salaryMin: string;
 }

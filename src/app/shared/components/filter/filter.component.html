@@ -4,7 +4,7 @@
       <mat-button-toggle-group
         #group="matButtonToggleGroup"
         [value]="cityVal"
-        (change)="onValChange(group.value)">
+        (change)="onValChange(group.value); ongetOffers()">
         <mat-button-toggle *ngFor="let cm of citiesMain"
                             [value]="cm.name"
                             >{{ cm.name }} </mat-button-toggle>
@@ -13,7 +13,7 @@
         </mat-button-toggle>
         <mat-menu #menu="matMenu">
           <button mat-menu-item
-                  (click)="onValChange(cd.name)"
+                  (click)="onValChange(cd.name); ongetOffers()"
                   *ngFor="let cd of citiesDrop"
                   >{{ cd.name }}</button>
         </mat-menu>

@@ -2,9 +2,10 @@
   <mat-button-toggle-group
     #group="matButtonToggleGroup"
     [value]="techVal"
-    (change)="onTechChange(group.value)">
+    (change)="onTechChange(group.value); ongetOffers()">
     <div class="tech-sign">
-      <mat-button-toggle><p style="margin-left: -4px; margin-top: -3px">All</p></mat-button-toggle>
+      <mat-button-toggle
+      [value]="'All'"><p style="margin-left: -4px; margin-top: -3px">All</p></mat-button-toggle>
     </div>
     <div class="tech-sign"
       *ngFor="let cm of techMain">
@@ -17,10 +18,10 @@
   </mat-button-toggle-group>
   <div class="filter-buttons">
     <mat-button-toggle class="btn-rounded-salary"
-    (click)="onSalaryChoose()">
+    (click)="onSalaryChoose(); ongetOffers()">
       <a>$  Salary </a> <mat-icon>keyboard_arrow_down</mat-icon>
     </mat-button-toggle>
-      <div class="salary-range-panel" tabindex="0" onblur="onSalaryChoose();"
+      <div class="salary-range-panel" tabindex="1"  (blur)="onSalaryChoose(); ongetOffers()"
       *ngIf="salarySlider">
         <p>Choose salary range</p>
         <div class="custom-slider">
@@ -33,7 +34,7 @@
     </mat-button-toggle>
       <mat-menu #menu="matMenu">
         <button mat-menu-item
-                (click)="onExpChange(exp.name)"
+                (click)="onExpChange(exp.name); ongetOffers()"
               *ngFor="let exp of expLvl">{{ exp.name }}</button>
       </mat-menu>
   </div>

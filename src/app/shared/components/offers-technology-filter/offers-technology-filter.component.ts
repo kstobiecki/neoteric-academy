@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { SharedService } from '../../services/shared.service';
+import { OfferService } from '../../../views/offers/services/offer.service';
 
 @Component({
   selector: 'app-offers-technology-filter',
@@ -6,9 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./offers-technology-filter.component.scss']
 })
 export class OffersTechnologyFilterComponent {
-  techVal: string;
-  salaryVal: string;
-  expVal: string;
+  techVal: string = 'all';
+  salaryVal: string = '0';
+  expVal: string = 'all';
   value: number = 0;
   highValue: number = 33000;
 
@@ -66,24 +68,32 @@ export class OffersTechnologyFilterComponent {
 
   salarySlider = false;
 
+  constructor(private sharedServ: SharedService,
+              private offerService: OfferService) {}
+
   onSalaryChoose() {
     this.salarySlider = !this.salarySlider;
+    this.sharedServ.filterParams.salaryMin = this.salaryVal;
+    console.log('jest');
     this.highValue = 33000;
 }
 
   onTechChange(val: string) {
     this.techVal = val;
-    console.log(this.techVal);
+    this.sharedServ.filterParams.technology = this.techVal;
   }
 
   onSalaryChange(val: string) {
     this.salaryVal = val;
-    console.log(this.salaryVal);
   }
 
   onExpChange(val: string) {
     this.expVal = val;
-    console.log(this.expVal);
+    this.sharedServ.filterParams.expLvl = this.expVal;
+  }
+
+  async ongetOffers() {
+    await this.offerService.downloadOffers();
   }
 
 }

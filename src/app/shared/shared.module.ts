@@ -4,11 +4,11 @@ import { SharedComponents } from './components';
 import { MatCardModule, MatChipsModule, MatMenuModule, MatRadioModule, MatSlideToggleModule } from '@angular/material';
 import { MaterialModule } from '../material/material.module';
 import { FormsModule } from '@angular/forms';
-import { FilterComponent } from './components/filter/filter.component';
-import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientService } from './http';
 import { CookieService } from 'ngx-cookie-service';
+import { Ng5SliderModule } from 'ng5-slider';
+import { OffersListComponent } from '../views/offers/components';
 
 @NgModule({
   imports: [
@@ -20,21 +20,18 @@ import { CookieService } from 'ngx-cookie-service';
     MatMenuModule,
     MatChipsModule,
     MatSlideToggleModule,
-    HttpClientModule
+    HttpClientModule,
+    Ng5SliderModule
   ],
   exports: [
     ...SharedComponents,
-    FilterComponent,
-    SidenavComponent
   ],
   declarations: [
     ...SharedComponents,
-    FilterComponent,
-    SidenavComponent,
   ],
   providers: [
     HttpClientService,
-    CookieService
+    CookieService,
   ]
 })
 export class SharedModule { }

@@ -16,7 +16,7 @@
   </div>
   <div class="right">
     <div class="date-item">
-      <a>{{ offer.salary }}</a>
+      <a>{{ offer.salary.min }} - {{ offer.salary.max }} PLN</a>
       <div class="date">{{ this.data }}</div>
     </div>
     <div class="tech-items">
@@ -24,7 +24,10 @@
         {{ offer.technology }}
       </div>
       <div class="tech-item">
-        {{ offer.skills[0][1] }}
+        {{ offer.expLvl }}
+      </div>
+      <div class="tech-item">
+        {{ offer.skills[0].name }}
       </div>
     </div>
   </div>

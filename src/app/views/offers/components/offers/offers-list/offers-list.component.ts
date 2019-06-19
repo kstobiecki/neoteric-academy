@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, DoCheck, OnInit} from '@angular/core';
 import { OfferService } from '../../../services/offer.service';
 
 @Component({
@@ -6,12 +6,18 @@ import { OfferService } from '../../../services/offer.service';
   templateUrl: './offers-list.component.html',
   styleUrls: ['./offers-list.component.scss']
 })
-export class OffersListComponent implements OnInit {
+export class OffersListComponent implements OnInit, DoCheck {
   offers = [];
 
   constructor(private offerService: OfferService) { }
 
   ngOnInit() {
+    this.offerService.downloadOffers();
     this.offers = this.offerService.getOffers();
   }
+
+  ngDoCheck() {
+    this.offers = this.offerService.getOffers();
+  }
+
 }

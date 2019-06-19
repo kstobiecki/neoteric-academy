@@ -40,6 +40,7 @@ export class AuthSignupComponent implements OnInit {
 
   async onSignup() {
     await this.authService.register(this.username, this.username, this.password);
+    this.router.navigate(['/auth/login']);
   }
 
 }

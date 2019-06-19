@@ -13,11 +13,15 @@ export class OfferItemComponent implements OnInit {
 
   data;
   test1;
+  test2;
+  test3;
 
   ngOnInit() {
     this.data = moment(this.offer.date).fromNow();
     this.test1 = /hours/i.exec(this.data);
-    if (this.test1 !== null) {
+    this.test2 = /seconds/i.exec(this.data);
+    this.test2 = /minute/i.exec(this.data);
+    if (this.test1 !== null || this.test2 !== null || this.test3 !== null) {
       this.data = 'New';
     }
   }

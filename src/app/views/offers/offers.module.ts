@@ -16,8 +16,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from '../../app-routing.module';
 import { RouterModule } from '@angular/router';
-import { Ng5SliderModule } from 'ng5-slider';
 import { NewOfferComponent } from './components/offers/new-offer/new-offer.component';
+import { UpdateOfferComponent } from './components/offers/update-offer/update-offer.component';
 
 
 @NgModule({
@@ -38,12 +38,12 @@ import { NewOfferComponent } from './components/offers/new-offer/new-offer.compo
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAp6cnxztG7VN62TsfvgATQ3YVDfgCN0tw'
     }),
-    AppRoutingModule,
-    Ng5SliderModule
+    AppRoutingModule
   ],
   declarations: [
     ...OffersComponents,
-    NewOfferComponent
+    NewOfferComponent,
+    UpdateOfferComponent
   ],
   providers: [
   ]

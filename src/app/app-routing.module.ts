@@ -7,6 +7,7 @@ import { OffersComponent } from './views/offers/components';
 import { OfferDetailComponent, OffersListComponent } from './views/offers/components';
 import { BrandsComponent } from './views/brands/components';
 import { NewOfferComponent } from './views/offers/components/offers/new-offer/new-offer.component';
+import { UpdateOfferComponent } from './views/offers/components/offers/update-offer/update-offer.component';
 
 const routes: Routes = [
   { path: '', redirectTo: AppRouterUrls.DEFAULT, pathMatch: 'full' },
@@ -16,6 +17,7 @@ const routes: Routes = [
     ]},
   { path: AppRoutes.BRANDS, component: BrandsComponent },
   { path: AppRoutes.NEW_OFFER, component: NewOfferComponent},
+  { path: AppRoutes.UPDATE_OFFER, component: UpdateOfferComponent},
   {
     path: AppRoutes.AUTH,
     children: [

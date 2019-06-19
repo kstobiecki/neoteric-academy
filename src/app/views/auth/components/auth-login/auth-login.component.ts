@@ -1,7 +1,7 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import {AuthService} from "../../services";
+import { AuthService } from '../../services';
 
 @Component({
   selector: 'app-auth-login',
@@ -37,14 +37,11 @@ export class AuthLoginComponent implements OnInit {
     this.authService.hideFilters = this.hideFilters;
   }
 
-  onLogin() {
+  async onLogin() {
     if (this.username === 'admin@gmail.com' && this.password === 'adminadmin1234') {
       alert('You are logged as ' + this.username);
       this.router.navigate(['']);
-    } else if (this.username === '' || this.password === '') {
-      alert('Enter email and password');
-    } else {
-      alert('Wrong login or password');
-    }
+      }
+    await this.authService.login(this.username, this.password);
   }
 }

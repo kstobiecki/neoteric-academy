@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from '../../services/shared.service';
+import {OfferService} from "../../../views/offers/services/offer.service";
 
 @Component({
   selector: 'app-filter',
@@ -6,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./filter.component.scss']
 })
 export class FilterComponent implements OnInit {
+  cityVal: string = 'all';
    citiesMain = [
      {name: 'All'},
      {name: 'Warszawa'},
@@ -21,7 +24,7 @@ export class FilterComponent implements OnInit {
      {name: 'Bydgoszcz'},
      {name: 'Częstochowa'},
      {name: 'Gliwice'},
-     {name: 'Katowica'},
+     {name: 'Katowice'},
      {name: 'Kielce'},
      {name: 'Lublin'},
      {name: 'Łódź'},
@@ -32,9 +35,18 @@ export class FilterComponent implements OnInit {
      {name: 'Szczecin'},
   ];
 
-  constructor() { }
+  constructor(private sharedServ: SharedService,
+              private offerService: OfferService) { }
 
   ngOnInit() {
   }
 
+  onValChange(val: string) {
+    this.cityVal = val;
+    this.sharedServ.filterParams.city = this.cityVal;
+  }
+
+  async ongetOffers() {
+    await this.offerService.downloadOffers();
+  }
 }

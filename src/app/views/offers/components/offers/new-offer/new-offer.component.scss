@@ -1,0 +1,49 @@
+.new-offer-form-log {
+  margin-bottom: 20px;
+  position: absolute;
+  top: 450px;
+  left: 1000px;
+  width: 80%;
+  background-color: white;
+  border-style: outset;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.new-input-form {
+  height: 25px;
+  padding: 5px 8px;
+  margin: 5px 10px 5px 10px;
+  border-radius: 10px;
+  border-style: groove;
+  border-color: black;
+  background-color: white;
+}
+.new-input-form:focus {
+  border-style: solid;
+  border-width: medium;
+  background-color: gainsboro;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 0 15px 0 15px;
+}
+
+.details {
+  width: 90%;
+  height: 150px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: row;
+  margin-left: 140px;
+}
+
+.mat-button {
+  background-color: mediumaquamarine;
+  border-radius: 30px;
+}

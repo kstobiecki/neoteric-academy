@@ -5,6 +5,8 @@
 
 export const AppRoutes = {
   DEFAULT: 'offers',
+  NEW_OFFER: 'new_offer',
+  UPDATE_OFFER: 'update_offer',
   BRANDS: 'brands',
   AUTH: 'auth',
   LOGIN: 'login',
@@ -13,6 +15,8 @@ export const AppRoutes = {
 
 export const AppRouterLinks = {
   DEFAULT: [AppRoutes.DEFAULT],
+  NEW_OFFER: [AppRoutes.NEW_OFFER],
+  UPDATE_OFFER: [AppRoutes.UPDATE_OFFER],
   BRANDS: [AppRoutes.BRANDS],
   LOGIN: [AppRoutes.AUTH, AppRoutes.LOGIN],
   SIGNUP: [AppRoutes.AUTH, AppRoutes.SIGNUP],
@@ -20,6 +24,8 @@ export const AppRouterLinks = {
 
 export const AppRouterUrls = {
   DEFAULT: `/${AppRoutes.DEFAULT}`,
+  NEW_OFFER: `/${AppRoutes.NEW_OFFER}`,
+  UPDATE_OFFER: `/${AppRoutes.UPDATE_OFFER}`,
   BRANDS: `/${AppRoutes.BRANDS}`,
   LOGIN: `/${AppRoutes.AUTH}/${AppRoutes.LOGIN}`,
   SIGNUP: `/${AppRoutes.AUTH}/${AppRoutes.SIGNUP}`,

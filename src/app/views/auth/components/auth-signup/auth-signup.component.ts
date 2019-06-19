@@ -38,7 +38,9 @@ export class AuthSignupComponent implements OnInit {
     this.authService.hideFilters = this.hideFilters;
   }
 
-  onSignup() {
-    this.router.navigate(['../login'], {relativeTo: this.route});
+  async onSignup() {
+    await this.authService.register(this.username, this.username, this.password);
+    this.router.navigate(['/auth/login']);
   }
+
 }

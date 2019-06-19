@@ -1,14 +1,21 @@
 <nav>
   <div>
     <ul>
-      <mat-button-toggle-group>
-        <mat-button-toggle *ngFor="let cm of citiesMain">{{ cm.name }}</mat-button-toggle>
+      <mat-button-toggle-group
+        #group="matButtonToggleGroup"
+        [value]="cityVal"
+        (change)="onValChange(group.value); ongetOffers()">
+        <mat-button-toggle *ngFor="let cm of citiesMain"
+                            [value]="cm.name"
+                            >{{ cm.name }} </mat-button-toggle>
         <mat-button-toggle [matMenuTriggerFor]="menu">
-          <mat-icon>arrow_drop_down</mat-icon>
+          <mat-icon>more_horiz</mat-icon>
         </mat-button-toggle>
         <mat-menu #menu="matMenu">
           <button mat-menu-item
-          *ngFor="let cd of citiesDrop">{{ cd.name }}</button>
+                  (click)="onValChange(cd.name); ongetOffers()"
+                  *ngFor="let cd of citiesDrop"
+                  >{{ cd.name }}</button>
         </mat-menu>
       </mat-button-toggle-group>
       <div class="day-night">

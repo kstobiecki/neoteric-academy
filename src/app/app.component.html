@@ -1,4 +1,7 @@
 <div class="container">
+  <div class="container-overlay"
+        *ngIf="test1"
+        (click)="onClick()"></div>
   <div class="main-content">
     <div class="nav-menu">
       <app-navigation-menu></app-navigation-menu>

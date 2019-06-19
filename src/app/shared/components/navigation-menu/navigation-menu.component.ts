@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AppRouterUrls } from '../../../app-routing.config';
 import { SharedService } from '../../services/shared.service';
+import { AuthService } from '../../../views/auth/services';
 
 @Component({
   selector: 'app-navigation-menu',
@@ -10,10 +11,15 @@ import { SharedService } from '../../services/shared.service';
 export class NavigationMenuComponent {
   appRouterUrls = AppRouterUrls;
 
-  constructor(private sharedService: SharedService) {
+  constructor(private sharedService: SharedService,
+              private authService: AuthService) {
     }
 
     onClick() {
       this.sharedService.onClick();
     }
+
+  hideFilters() {
+    this.authService.hideFilters = true;
+  }
   }

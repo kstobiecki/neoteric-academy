@@ -1,12 +1,16 @@
-<div>
-  <ul class="left">
-    <li><a mat-flat-button
-           (click)="hideFilters()"
-           [routerLink]="appRouterUrls.SIGNUP">signup</a></li>
-    <li><a mat-flat-button
-           (click)="hideFilters()"
-           [routerLink]="appRouterUrls.LOGIN">login</a></li>
-    <li class="right"><a mat-flat-button
-                         (click)="onClick()"><mat-icon>close</mat-icon></a></li>
-  </ul>
+<div class="sidenav-content">
+  <header class="sidenav-header">justjoin.it</header>
+  <div class="sidenav-line"></div>
+  <div class="sidenav-button"><mat-icon>work</mat-icon><p>Employer Panel</p></div>
+  <div class="sidenav-button"><mat-icon>chat</mat-icon><p>JustJoinIT</p></div>
+  <div class="sidenav-button"><mat-icon>rss_feed</mat-icon><p>RSS</p></div>
+  <div class="sidenav-button"><mat-icon>picture_as_pdf</mat-icon><p>Terms</p></div>
+  <div class="sidenav-button"><mat-icon>picture_as_pdf</mat-icon><p>Policy</p></div>
+  <div class="sidenav-line"></div>
+  <div class="sidenav-button"
+       (click)="onClick()"
+       [routerLink]="appRouterUrls.SIGNUP"><mat-icon>create</mat-icon><p>Signup</p></div>
+  <div class="sidenav-button"
+       (click)="onClick()"
+       [routerLink]="appRouterUrls.LOGIN"><mat-icon>forward</mat-icon><p>Login</p></div>
 </div>

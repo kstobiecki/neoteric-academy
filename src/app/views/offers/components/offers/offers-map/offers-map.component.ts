@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, DoCheck, OnInit} from '@angular/core';
 import { OfferService } from '../../../services/offer.service';
 import { AppRouterUrls } from '../../../../../app-routing.config';
 import { OffersInterface } from '../offers.interface';
@@ -8,7 +8,7 @@ import { OffersInterface } from '../offers.interface';
   templateUrl: './offers-map.component.html',
   styleUrls: ['./offers-map.component.scss']
 })
-export class OffersMapComponent implements OnInit {
+export class OffersMapComponent implements OnInit, DoCheck {
   appRouterUrls = AppRouterUrls;
   offers = [];
 
@@ -16,8 +16,8 @@ export class OffersMapComponent implements OnInit {
   lng: number = 19.069815;
   zoom: number;
 
-  private icon = {
-    url: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/4621/javascript.png',
+  icon = {
+    url: '',
     scaledSize: {
       height: 30,
       width: 30
@@ -32,10 +32,14 @@ export class OffersMapComponent implements OnInit {
     this.zoom = 6;
   }
 
-  onMarkerClick(offer) {
-    this.lat = this.offerService.getOfferLat(offer.i);
-    this.lng = this.offerService.getOfferLng(offer.i);
-    this.zoom = this.offerService.getZoom();
+  ngDoCheck() {
+    this.offers = this.offerService.getOffers();
+  }
+
+  onMarkerClick(lat, lng) {
+    this.lat = lat;
+    this.lng = lng;
+    this.zoom = 8;
   }
 
   markerOut(m: OffersInterface) {
@@ -44,5 +48,10 @@ export class OffersMapComponent implements OnInit {
 
   markerOver(m: OffersInterface) {
     m.markerAnimation = 'BOUNCE';
+  }
+
+  getImage(image) {
+    this.icon.url = image;
+    return this.icon;
   }
 }

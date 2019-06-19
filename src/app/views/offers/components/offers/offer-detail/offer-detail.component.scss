@@ -5,7 +5,7 @@
 }
 
 .detail-content {
-  height: 100%;
+  height: 100vh;
   background-color: #f3f6f8;
 }
 
@@ -148,8 +148,25 @@ li {
   @include margin-card;
 }
 
+.CRUD-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 20px;
+}
+
+.btn-crud {
+  background-color: #ff4081;
+  border: 0;
+  border-radius: 20px;
+  height: 40px;
+  text-transform: uppercase;
+  color: white;
+  outline: none;
+}
+
 .example-viewport {
-  height: 700px;
+  height: 100vh;
   width: 100%;
   border: 0;
 }

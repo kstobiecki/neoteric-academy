@@ -5,14 +5,30 @@
     <div class="border-item"></div>
     <img src="{{ offer.imagePath }}"
          alt="{{ offer.companyName }}"
-         style="width: 70px; height: 70px">
+         style="width: 50px; height: 50px">
   </div>
   <div class="center">
     <h4>{{ offer.jobTitle }}</h4>
-    <p>{{ offer.companyName }} {{ offer.city }}</p>
+    <div class="address-item">
+      <p><mat-icon>business</mat-icon>{{ offer.companyName }}</p>
+      <p><mat-icon>place</mat-icon>{{ offer.city }}</p>
+    </div>
   </div>
   <div class="right">
-    <a>{{ offer.salary }}</a>
-    <p>{{ offer.technology }}</p>
+    <div class="date-item">
+      <a>{{ offer.salary.min }} - {{ offer.salary.max }} PLN</a>
+      <div class="date">{{ this.data }}</div>
+    </div>
+    <div class="tech-items">
+      <div class="tech-item">
+        {{ offer.technology }}
+      </div>
+      <div class="tech-item">
+        {{ offer.expLvl }}
+      </div>
+      <div class="tech-item">
+        {{ offer.skills[0].name }}
+      </div>
+    </div>
   </div>
 </div>

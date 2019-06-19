@@ -5,6 +5,9 @@ import { MaterialModule } from '../../material/material.module';
 import { AuthServices } from './services';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientService } from '../../shared/http';
+import { CookieService } from 'ngx-cookie-service';
 
 
 // in this module we import every angular material module
@@ -14,13 +17,16 @@ import { MatFormFieldModule } from '@angular/material';
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    HttpClientModule
   ],
   declarations: [
     ...AuthComponents,
   ],
   providers: [
-    ...AuthServices
+    ...AuthServices,
+    HttpClientService,
+    CookieService
   ]
 })
 export class AuthModule { }

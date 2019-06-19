@@ -1,0 +1,103 @@
+<div class="centered">
+  <form class="new-offer-form-log">
+    <div class="row">
+      <div>
+        <label for="company" class="label-log">Company name</label>
+        <input id="company" name="companyName" class="new-input-form" placeholder="Your company name..."
+               [(ngModel)]="companyName">
+      </div>
+      <div>
+        <label for="img" class="label-log">Company logo</label>
+        <input id="img" name="imgPath" class="new-input-form" placeholder="Image path..."
+               [(ngModel)]="imagePath">
+      </div>
+      <div>
+        <label for="city" class="label-log">City</label>
+        <select id="city" name="city" class="new-input-form" style="height: 40px"
+                [(ngModel)]="city">
+          <option *ngFor="let city of cities">{{ city.name }}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label for="lat" class="label-log">Latitude</label>
+        <input id="lat" type="number" max="85" min="-85" name="lat" class="new-input-form" style="width: 50px"
+               [(ngModel)]="latitude">
+      </div>
+      <div>
+        <label for="lng" class="label-log">Longitude</label>
+        <input id="lng" type="number" max="180" min="-180" name="lng" class="new-input-form" style="width: 50px"
+               [(ngModel)]="long">
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label for="job" class="label-log">Job title</label>
+        <input id="job" name="jobTitle" class="new-input-form" placeholder="Job title..."
+               [(ngModel)]="jobTitle">
+      </div>
+      <div>
+        <label for="tech" class="label-log">Technology</label>
+        <select id="tech" name="technology" class="new-input-form" style="height: 40px"
+                [(ngModel)]="technology">
+          <option *ngFor="let tech of techs">{{ tech.name }}</option>
+        </select>
+      </div>
+      <div>
+        <label for="exp" class="label-log">Experience</label>
+        <select id="exp" name="experience" class="new-input-form" style="height: 40px"
+                [(ngModel)]="expLevel">
+          <option *ngFor="let exp of expLvl">{{ exp.name }}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label for="salary1" for="salary2" class="label-log">Salary [PLN]</label>
+        <input id="salary1" type="number" name="salary" class="new-input-form" placeholder="Salary min"
+               [(ngModel)]="salary.min">
+        -
+        <input id="salary2" type="number" name="salary" class="new-input-form" placeholder="Salary max"
+               [(ngModel)]="salary.max">
+      </div>
+    </div>
+
+    <div>
+      <label for="details" class="label-log">Details</label>
+      <textarea id="details" name="details" class="details new-input-form" placeholder="Job details..."
+                [(ngModel)]="details">
+      </textarea>
+    </div>
+
+    <div>
+      <label for="requirements" class="label-log">Details</label>
+      <textarea id="requirements" name="details" class="details new-input-form" style="height: 75px" placeholder="Requirements..."
+                [(ngModel)]="requirements">
+      </textarea>
+    </div>
+
+    <div>
+      <label class="label-log">Skills</label>
+      <form #formRef="ngForm">
+        <div *ngFor="let skill of skills; let in=index">
+          <div class="form-group">
+            <input type="text" [(ngModel)]="skills[in].name" name="name{{ in }}" class="new-input-form" #name="ngModel" required />
+            <input type="number" min="1" max="10" [(ngModel)]="skills[in].lvl" name="name{{ in }}" class="new-input-form" #name="ngModel" required />
+          </div>
+        </div>
+        <button class="mat-button"
+                [disabled]="!formRef.form.valid" (click)="add()">Add skill</button>
+      </form>
+    </div>
+
+    <div>
+      <button class="btn-log btn-rounded" style="width: 20%"
+              [routerLink]="appRouterUrls.DEFAULT"
+              (click)="updateOffer()">Update offer</button>
+    </div>
+  </form>
+</div>

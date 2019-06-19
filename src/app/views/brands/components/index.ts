@@ -1,4 +1,4 @@
-import {BrandsComponent} from './brands/brands.component';
+import { BrandsComponent } from './brands/brands.component';
 
 export const BrandsComponents = [
   BrandsComponent

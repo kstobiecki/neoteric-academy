@@ -9,7 +9,7 @@
         <img src="{{ offer.imagePath }}">
       </div>
       <div class="main-info">
-        <a>{{ offer.salary }} PLN net/month</a>
+        <a>{{ offer.salary.min }} - {{ offer.salary.max }} PLN net/month</a>
         <p>{{ offer.jobTitle }}</p>
         <a>{{ offer.companyName }}, {{ offer.city }}</a>
       </div>
@@ -41,8 +41,8 @@
     </div>
     <div class="skills">
       <div class="skill-bar-block" *ngFor="let skill of offer.skills">
-        <mat-progress-bar mode="determinate" value="{{ skill[0] }}"></mat-progress-bar>
-        <a>{{ skill[1] }}</a>
+        <mat-progress-bar mode="determinate" value="{{ skill.lvl }}"></mat-progress-bar>
+        <a>{{ skill.name }}</a>
       </div>
     </div>
     <div>
@@ -52,44 +52,50 @@
       <div class="description-1">{{ offer.details }}</div>
       <h3>Header 1</h3>
       <ul>
-        <li>{{ offer.requirement }}</li>
-        <li>{{ offer.requirement }}</li>
-        <li>{{ offer.requirement }}</li>
-        <li>{{ offer.requirement }}</li>
-        <li>{{ offer.requirement }}</li>
-        <li>{{ offer.requirement }}</li>
+        <li>{{ offer.requirements }}</li>
+        <li>{{ offer.requirements }}</li>
+        <li>{{ offer.requirements }}</li>
+        <li>{{ offer.requirements }}</li>
+        <li>{{ offer.requirements }}</li>
+        <li>{{ offer.requirements }}</li>
       </ul>
       <h3>Header 2</h3>
       <ul>
-        <li>{{ offer.requirement }}</li>
-        <li>{{ offer.requirement }}</li>
-        <li>{{ offer.requirement }}</li>
-        <li>{{ offer.requirement }}</li>
-        <li>{{ offer.requirement }}</li>
-        <li>{{ offer.requirement }}</li>
+        <li>{{ offer.requirements }}</li>
+        <li>{{ offer.requirements }}</li>
+        <li>{{ offer.requirements }}</li>
+        <li>{{ offer.requirements }}</li>
+        <li>{{ offer.requirements }}</li>
+        <li>{{ offer.requirements }}</li>
       </ul>
       <h3>Header 3</h3>
       <ul>
-        <li>{{ offer.requirement }}</li>
-        <li>{{ offer.requirement }}</li>
-        <li>{{ offer.requirement }}</li>
-        <li>{{ offer.requirement }}</li>
-        <li>{{ offer.requirement }}</li>
-        <li>{{ offer.requirement }}</li>
+        <li>{{ offer.requirements }}</li>
+        <li>{{ offer.requirements }}</li>
+        <li>{{ offer.requirements }}</li>
+        <li>{{ offer.requirements }}</li>
+        <li>{{ offer.requirements }}</li>
+        <li>{{ offer.requirements }}</li>
       </ul>
       <h3>Header 4</h3>
       <ul>
-        <li>{{ offer.requirement }}</li>
-        <li>{{ offer.requirement }}</li>
-        <li>{{ offer.requirement }}</li>
-        <li>{{ offer.requirement }}</li>
-        <li>{{ offer.requirement }}</li>
-        <li>{{ offer.requirement }}</li>
+        <li>{{ offer.requirements }}</li>
+        <li>{{ offer.requirements }}</li>
+        <li>{{ offer.requirements }}</li>
+        <li>{{ offer.requirements }}</li>
+        <li>{{ offer.requirements }}</li>
+        <li>{{ offer.requirements }}</li>
       </ul>
     </div>
+    <div class="CRUD-buttons" *ngIf="canDisplayCRUD">
+      <button class="btn-crud"
+      [routerLink]="appRouterUrls.UPDATE_OFFER"
+      (click)="sendOfferToUpdate()"><mat-icon>edit</mat-icon></button>
+      <button class="btn-crud" (click)="onDelete()"><mat-icon>delete_forever</mat-icon></button>
+    </div>
       <div class="label-log">
-        <mat-checkbox>I agree to the terms of service and privacy policy</mat-checkbox>
-        <div style="width: 15%" >
+        <mat-checkbox style="margin-left: 20px">I agree to the terms of service and privacy policy</mat-checkbox>
+        <div style="width: 15%; margin-left: 20px" >
           <button class="btn-log btn-rounded" type="submit"
                   [routerLink]="appRouterUrls.DEFAULT">Apply</button>
         </div>

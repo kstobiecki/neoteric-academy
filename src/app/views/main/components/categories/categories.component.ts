@@ -1,13 +1,18 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
+import { MainService } from '../../services';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.component.html',
   styleUrls: ['./categories.component.scss']
 })
-export class AppCategoriesComponent {
+export class AppCategoriesComponent implements OnInit, OnDestroy {
+
+  constructor(private mainService: MainService) {}
 
   @Output() emitCategory = new EventEmitter<Category>();
+  activeCategorySub: Subscription;
   categories: Category[] = [
     {
       name: 'javascript',
@@ -34,11 +39,20 @@ export class AppCategoriesComponent {
 
   activateCategory(category: Category) {
     this.activeCategory = this.activeCategory !== category ? category : undefined;
-    this.emitCategory.emit(this.activeCategory);
+    this.mainService.setActiveCategory(category);
   }
 
   showInputVariable(activeCategoryInput: HTMLInputElement) {
     console.log(activeCategoryInput);
   }
 
+  ngOnInit() {
+    this.activeCategorySub = this.mainService.getActiveCategoryStream().subscribe((category: Category) => {
+      this.activeCategory = category;
+    });
+  }
+
+  ngOnDestroy() {
+    this.activeCategorySub.unsubscribe();
+  }
 }

@@ -1,0 +1,17 @@
+<div class="categories">
+  <div class="category-item"
+       *ngFor="let category of categories"
+       (click)="activateCategory(category)"
+       [ngClass]="{'active': category === activeCategory}">
+    {{category.name}} with rating {{category.rating}}
+  </div>
+
+  <div *ngIf="activeCategory" class="input-container">
+    <h5>Active element now: {{activeCategory.name}}</h5>
+    <h4>[(Two way data binding)]:</h4>
+    <input #activeCategoryInput [(ngModel)]="activeCategory.name">
+    <button (click)="showInputVariable(activeCategoryInput)">
+      Show Input Variable
+    </button>
+  </div>
+</div>

@@ -4,7 +4,7 @@
  * */
 
 export const AppRoutes = {
-  DEFAULT: 'offers',
+  DEFAULT: 'main',
   AUTH: 'auth',
   LOGIN: 'login',
 };

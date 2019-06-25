@@ -1,0 +1,25 @@
+.categories {
+  width: 200px;
+  border: 1px solid green;
+  .category-item {
+    padding: 1rem;
+    border: 1px solid red;
+    margin: 0.2rem;
+    transition: all .5s;
+    &.active {
+      background-color: purple !important;
+      color: white;
+    }
+    &:hover {
+      cursor: pointer;
+      background-color: red;
+      color: white;
+    }
+  }
+  .input-container {
+    margin: 1rem;
+    input {
+      width: 100%;
+    }
+  }
+}

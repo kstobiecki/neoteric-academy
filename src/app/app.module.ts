@@ -7,6 +7,7 @@ import { MaterialModule } from './material/material.module';
 import { CoreGuards } from './guards';
 import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './views/auth/auth.module';
+import { MainModule } from './views/main/main.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AuthModule } from './views/auth/auth.module';
     AppRoutingModule,
     MaterialModule,
     SharedModule,
-    AuthModule
+    AuthModule,
+    MainModule
   ],
   providers: [
     CoreGuards

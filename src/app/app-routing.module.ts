@@ -4,7 +4,7 @@ import { AppRouterUrls, AppRoutes } from './app-routing.config';
 import {AuthLoginComponent} from './views/auth/components';
 
 const routes: Routes = [
-  // odkomentować gdy dodasz komponent offers
+  // odkomentować gdy dodasz komponent main
   // { path: '', redirectTo: AppRouterUrls.DEFAULT, pathMatch: 'full' },
   {
     path: AppRoutes.AUTH,

@@ -1,0 +1,11 @@
+<div class="questions">
+  <div *ngIf="!category">Please select a category</div>
+  <div *ngIf="category">
+    Selected category is
+    <span class="name">{{category.name}}</span>
+    and has a rating of
+    <span class="rating">{{category.rating}}</span><br>
+    and the assigned questions is: <br>
+    <app-question [setQuestion]="category.question"></app-question>
+  </div>
+</div>

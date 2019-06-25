@@ -1,3 +1,10 @@
-<app-navigation-menu></app-navigation-menu>
-<router-outlet></router-outlet>
+<div class="app">
+  <div class="app-header">
+    <app-header></app-header>
+  </div>
+  <div class="app-container">
+    <app-categories (emitCategory)="catchCategory($event)"></app-categories>
+    <app-questions [category]="selectedCategory"></app-questions>
+  </div>
+</div>
 

@@ -1,0 +1,19 @@
+:host {
+  flex-grow: 1;
+}
+.questions {
+  border: 1px solid red;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  div {
+    font-size: 1.2rem;
+    .name {
+      font-weight: 700;
+    }
+    .rating {
+      font-weight: 700;
+    }
+  }
+}

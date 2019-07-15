@@ -1,8 +1,17 @@
 import { Injectable } from '@angular/core';
+import { CanActivate, Router } from '@angular/router';
 
-@Injectable()
-export class IsAuthenticatedGuard {
-  // simple guard checking if user is authenticated
+@Injectable({
+  providedIn: 'root'
+})
+export class IsAuthenticatedGuard implements CanActivate {
 
-  constructor() { }
+  constructor(private readonly router: Router) {}
+
+  canActivate() {
+    return true;
+    // this.router.navigate(['user']);
+    // return false;
+  }
 }
+

@@ -6,5 +6,8 @@
     <app-categories (emitCategory)="catchCategory($event)"></app-categories>
     <app-questions [category]="selectedCategory"></app-questions>
   </div>
+  <div class="app-router">
+    <router-outlet></router-outlet>
+  </div>
 </div>
 
